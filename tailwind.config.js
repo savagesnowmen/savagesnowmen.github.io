@@ -17,7 +17,9 @@ module.exports = {
       inset: {
         '1': '1rem',
         '43vw': '43vw',
-        '77%' : '77%'
+        '77%' : '77%',
+        '13vw': '13vw',
+        '20vw': '20vw'
       },
       width: {
         '8rem': '8rem',

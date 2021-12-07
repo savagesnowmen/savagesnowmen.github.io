@@ -2,8 +2,7 @@
   <div>
     <section class="relative md:h-56vw">
       <img
-        class="hidden md:block w-1/4 absolute"
-        style="top: 15rem; left: 15rem"
+        class="hidden md:block w-1/4 absolute top-13vw left-20vw"
         src="~/assets/images/snowman.jpeg"
       />
       <img
