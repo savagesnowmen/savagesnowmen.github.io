@@ -40,6 +40,7 @@
       src="~/assets/videos/home-hero-background.mp4"
       autoplay
       loop
+      muted
       class="hidden sm:block sm:w-full absolute top-0 -z-1"
     />
   </section>

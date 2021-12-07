@@ -26,7 +26,7 @@
     />
     <nav
       :class="`${showMenu ? 'flex' : 'hidden'} ${
-        home ? 'sm:hidden' : 'sm:flex'
+        $route.path == '/' ? 'sm:hidden' : 'sm:flex'
       } w-full sm:w-unset sm:visible sm:absolute sm:right-1 sm:ml-4 sm:flex-row flex-wrap`"
     >
       <s-link

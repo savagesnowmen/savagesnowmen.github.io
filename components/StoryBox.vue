@@ -6,8 +6,8 @@
     </p>
   </div>
   <div class="flex flex-row flex-wrap justify-evenly">
-    <s-button to="" class="text-2xl">That's enough old man</s-button>
-    <s-button to="" class="text-2xl" @click.native="step = step + 1">Tell me more!</s-button>
+    <s-link to="/mint" class="text-2xl">That's enough old man</s-link>
+    <s-button class="text-2xl" @click.native="step = step + 1">Tell me more!</s-button>
   </div>
 </div>
 </template>

@@ -1,6 +1,7 @@
 <template>
   <a 
     class="
+      cursor-pointer
       border-4
       text-xl
       border-black
