@@ -29,10 +29,7 @@
             beer on tap, nothing beats The Lodge. You understand now right?
           </div>
           <div class="hidden md:block m-8">
-            <img
-              class="w-12rem"
-              src="~/assets/images/snowman-head-joint.png"
-            />
+            <img class="w-12rem" src="~/assets/images/snowman-head-joint.png" />
           </div>
         </div>
         <!-- the minting row -->
@@ -165,7 +162,7 @@
           <div
             class="
               rounded-lg
-              bg-red-600
+              bg-red-500
               p-4
               m-4
               ml-4
@@ -181,7 +178,7 @@
             </p>
           </div>
 
-          <div class="rounded-lg bg-red-600 p-4 m-4 text-xl md:text-2xl">
+          <div class="rounded-lg bg-red-500 p-4 m-4 text-xl md:text-2xl">
             <p>
               After mint, it is the Snowman responsibility to select who they
               want to join The Lodge. The power of who buys a Snowman in the
