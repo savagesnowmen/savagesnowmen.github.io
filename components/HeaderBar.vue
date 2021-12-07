@@ -12,13 +12,12 @@
       text-center
     "
   >
-    <a href="/">
+    <NuxtLink to="/">
       <img
-        @click="$route.to('/')"
         class="w-12rem md:w-1/2"
         src="~/assets/images/savage-snowman-logo.png"
       />
-    </a>
+    </NuxtLink>
 
     <img
       class="block sm:hidden"
@@ -30,24 +29,21 @@
         home ? 'sm:hidden' : 'sm:flex'
       } w-full sm:w-unset sm:visible sm:absolute sm:right-1 sm:ml-4 sm:flex-row flex-wrap`"
     >
-      <s-button
-        class="w-full sm:w-auto bg-purple-500 text-2xl border-4 px-2"
-        to=""
-        >Connect Wallet</s-button
-      >
-      <s-button
+      <s-link
         v-if="$route.path != '/'"
         to="/"
         class="w-full sm:w-auto bg-purple-500 text-2xl border-4 px-2"
-        >Home</s-button
+        >Home</s-link
       >
-      <s-button
+      <s-link
         class="w-full sm:w-auto bg-purple-500 text-2xl border-4 px-2"
         to="/mint"
-        >Mint</s-button
-      >
+        >Mint</s-link>
       <!--<s-button class="bg-purple-500 text-2xl border-4 px-2">Farm</s-button>
       <s-button class="bg-purple-500 text-2xl border-4 px-2">Stake</s-button> -->
+      <s-button
+        class="w-full sm:w-auto bg-purple-500 text-2xl border-4 px-2"
+        >Connect Wallet</s-button>
     </nav>
   </header>
 </template>

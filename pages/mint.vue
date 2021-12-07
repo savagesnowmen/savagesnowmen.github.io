@@ -4,7 +4,7 @@
       <img
         class="hidden md:block w-1/4 absolute"
         style="top: 15rem; left: 15rem"
-        src="~/assets/images/snowman.png"
+        src="~/assets/images/snowman.jpeg"
       />
       <img
         class="invisible md:visible w-full absolute top-0 -z-1"
@@ -110,7 +110,7 @@
         </h2>
         <div class="flex flex-col md:flex-row">
           <div class="hidden md:block w-2/3 ml-8 mr-4">
-            <img src="~/assets/images/stake-trail-map.png" />
+            <img src="~/assets/images/stake-trail-map.jpeg" />
           </div>
           <div class="md:w-1/3">
             <div class="p-4">

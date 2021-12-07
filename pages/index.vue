@@ -4,7 +4,7 @@
       <s-button class="bg-purple-500 mb-10 text-2xl"
         >Connect Wallet</s-button
       >
-      <s-button to="/mint" class="bg-purple-500 text-2xl">Buy Snowmen</s-button>
+      <s-link to="/mint" class="bg-purple-500 text-2xl">Buy Snowmen</s-link>
       <!-- <s-button class="bg-purple-500 text-2xl">Stake Snowmen</s-button>
         <s-button class="bg-purple-500 text-2xl">Stake Snowmen</s-button> -->
     </nav>
@@ -17,7 +17,8 @@
       </div>
     </div>
 
-    <s-button
+    <s-link
+      to="/mint"
       class="
         invisible
         md:visible
@@ -30,7 +31,7 @@
       "
     >
       Mint Snowmen
-    </s-button>
+    </s-link>
 
     <social-icons
       class="mx-auto justify-center sm:absolute sm:bottom-1 sm:left-1"
@@ -45,14 +46,10 @@
 </template>
 
 <script>
-import SButton from "~/components/SButton.vue";
-import StoryBox from "~/components/StoryBox.vue";
-import SocialIcons from "~/components/SocialIcons.vue";
 export default {
   metaInfo: {
     title: "Home",
   },
-  name: "Home",
-  components: { SButton, StoryBox, SocialIcons },
+  name: "Home"
 };
 </script>

@@ -11,7 +11,7 @@
         <div class="mx-auto md:w-1/2 mt-8">
           <!-- stake and add liquidity buttons -->
           <div class="flex flex-row items-center justify-center m-2">
-            <nuxt-link
+            <a
               class="
                 text-2xl
                 rounded-lg
@@ -22,9 +22,8 @@
                 border-2 border-black
                 mx-2
               "
-              ><span class="text-white">Buy $LODGE</span></nuxt-link
-            >
-            <nuxt-link
+              ><span class="text-white">Buy $LODGE</span></a>
+            <a
               class="
                 text-2xl
                 rounded-lg
@@ -35,8 +34,7 @@
                 border-2 border-black
                 mx-2
               "
-              ><span class="text-white">Add Liquidity</span></nuxt-link
-            >
+              ><span class="text-white">Add Liquidity</span></a>
           </div>
           <div
             class="
@@ -68,16 +66,16 @@
             <div class="flex flew-row mt-4">
               <t-stake-input class="w-36" />
               <t-max-button>MAX</t-max-button>
-              <nuxt-link
+              <a
                 class="bg-indigo-300 rounded-full text-2xl p-1 px-8 mx-2"
               >
                 <span class="text-white align-middle">Stake</span>
-              </nuxt-link>
-              <nuxt-link
+              </a>
+              <a
                 class="bg-indigo-300 rounded-full text-2xl p-1 px-8"
               >
                 <span class="text-white align-middle">Claim</span>
-              </nuxt-link>
+              </a>
             </div>
           </div>
         </div>
