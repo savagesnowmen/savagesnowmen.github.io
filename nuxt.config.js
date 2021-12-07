@@ -22,6 +22,10 @@ export default {
     ]
   },
 
+  router: {
+    base: '/sno-website/'
+  },
+
   components: true,
 
   // Global CSS: https://go.nuxtjs.dev/config-css

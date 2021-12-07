@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate"
+    "generate": "nuxt generate",
+    "deploy": "push-dir --dir=dist --branch=gh-pages --cleanup"
   },
   "dependencies": {
     "@tailwindcss/forms": "^0.3.4",
@@ -16,6 +17,7 @@
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^4.2.0",
     "@tailwindcss/jit": "^0.1.18",
-    "postcss": "^8.3.5"
+    "postcss": "^8.3.5",
+    "push-dir": "^0.4.1"
   }
 }
