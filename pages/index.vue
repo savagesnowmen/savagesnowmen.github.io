@@ -5,8 +5,8 @@
         >Connect Wallet</s-button
       >
       <s-link to="/mint" class="bg-purple-500 text-2xl">Buy Snowmen</s-link>
-      <!-- <s-button class="bg-purple-500 text-2xl">Stake Snowmen</s-button>
-        <s-button class="bg-purple-500 text-2xl">Stake Snowmen</s-button> -->
+      <s-link to="/stake" class="bg-purple-500 text-2xl">Stake Snowmen</s-link>
+        <!--<s-button class="bg-purple-500 text-2xl">Stake Snowmen</s-button> -->
     </nav>
 
     <div class="container mx-auto">
@@ -54,3 +54,8 @@ export default {
   name: "Home"
 };
 </script>
+<style>
+body {
+  background-color: black;
+}
+</style>

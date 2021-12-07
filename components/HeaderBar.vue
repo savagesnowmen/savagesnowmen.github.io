@@ -39,8 +39,8 @@
         class="w-full sm:w-auto bg-purple-500 text-2xl border-4 px-2"
         to="/mint"
         >Mint</s-link>
-      <!--<s-button class="bg-purple-500 text-2xl border-4 px-2">Farm</s-button>
-      <s-button class="bg-purple-500 text-2xl border-4 px-2">Stake</s-button> -->
+      <s-link to="/stake" class="bg-purple-500 text-2xl border-4 px-2">Stake</s-link>
+      <!--<s-button class="bg-purple-500 text-2xl border-4 px-2">Stake</s-button> -->
       <s-button
         class="w-full sm:w-auto bg-purple-500 text-2xl border-4 px-2"
         >Connect Wallet</s-button>
