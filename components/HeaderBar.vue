@@ -41,13 +41,26 @@
         >Mint</s-link>
       <s-link to="/stake" class="bg-purple-500 text-2xl border-4 px-2">Stake</s-link>
       <!--<s-button class="bg-purple-500 text-2xl border-4 px-2">Stake</s-button> -->
-      <s-button
+      <s-button @click.native="connect()"
         class="w-full sm:w-auto bg-purple-500 text-2xl border-4 px-2"
         >Connect Wallet</s-button>
     </nav>
   </header>
 </template>
 <script>
+import Web3 from "web3";
+import Web3Modal from "web3modal";
+
+const providerOptions = {
+  /* See Provider Options Section */
+};
+
+const web3Modal = new Web3Modal({
+  network: "mainnet", // optional
+  cacheProvider: true, // optional
+  providerOptions // required
+});
+
 export default {
   name: "HeaderBar",
   props: {
@@ -58,5 +71,11 @@ export default {
       showMenu: false,
     };
   },
+  methods: {
+    async connect(){
+      const provider = await web3Modal.connect();
+      const web3 = new Web3(provider);
+    }
+  }
 };
 </script>

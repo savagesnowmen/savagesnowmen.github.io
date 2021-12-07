@@ -23,7 +23,7 @@ export default {
   },
 
   router: {
-    base: '/sno-website/'
+    base: '/'
   },
 
   components: true,
