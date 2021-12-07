@@ -1,4 +1,4 @@
-# nuxt-snowmen
+# Savage Snowmen Website
 
 ## Build Setup
 
