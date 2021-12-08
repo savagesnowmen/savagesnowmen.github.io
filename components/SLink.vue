@@ -1,17 +1,15 @@
 <template>
   <NuxtLink
     :to="to"
+    v-bind="$attrs"
     class="
       border-4
       text-xl
       border-black
       text-center
       flex-grow
-      mx-2
       my-2
       p-1
-      bg-red-500
-      px-2
     "
   >
     <span class="text-white">

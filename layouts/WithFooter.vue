@@ -11,9 +11,9 @@
       <div class="flex flex-row justify-between m-2">
         <social-icons/>
         <div class="flex flex-row">
-          <s-button class="bg-purple-500" to="/mint">Mint</s-button>
-          <!-- <s-button class="bg-purple-500">Farm</s-button>
-        <s-button class="bg-purple-500">Stake</s-button> -->
+          <s-button class="bg-indigo-500" to="/mint">Mint</s-button>
+          <!-- <s-button class="bg-indigo-500">Farm</s-button>
+        <s-button class="bg-indigo-500">Stake</s-button> -->
         </div>
       </div>
       <div>

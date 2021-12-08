@@ -3,7 +3,7 @@
     <section class="relative md:h-56vw">
       <img
         class="hidden md:block w-1/4 absolute top-13vw left-20vw"
-        src="~/assets/images/snowman.jpeg"
+        src="~/assets/images/snowmen-carousel.gif"
       />
       <img
         class="invisible md:visible w-full absolute top-0 -z-1"
@@ -41,7 +41,7 @@
             +
           </div>
           <div>
-            <s-button class="text-4xl" @click.native="mint()"
+            <s-button class="text-4xl bg-red-500" @click.native="mint()"
               >Mint Snowmen</s-button
             >
           </div>
@@ -129,8 +129,7 @@
                 Phase 2
               </div>
               <p class="my-2 text-xl">
-                Mint a Snowman to join like-minded Avax Chads in The Lodge. We
-                all just like to have a good time and enjoy Avalanche.
+                Stake your Snowman and start earning $LODGE! The earlier you accumulate the better. $LODGE is our ecosystem token and the currency of The Lodge.
               </p>
             </div>
             <div class="p-4">
@@ -141,8 +140,10 @@
                 Phase 3
               </div>
               <p class="my-2 text-xl">
-                Mint a Snowman to join like-minded Avax Chads in The Lodge. We
-                all just like to have a good time and enjoy Avalanche.
+                Get your team to The Lodge first! Collaborate with fellow giga-brain Snowmen to solve the mystery of the Savage Snowmen.
+              </p>
+              <p class="my-2 text-xl">
+                This is only the beginning...
               </p>
             </div>
           </div>
@@ -225,14 +226,14 @@
           <img
             class="w-12rem h-24rem object-contain"
             fit="contain"
-            src="~/assets/images/team-dev-4.png"
+            src="~/assets/images/dev1-head.png"
           />
         </team-card>
         <team-card name="Dev">
           <img
             class="w-14rem h-24rem object-contain"
             fit="contain"
-            src="~/assets/images/team-dev-4.png"
+            src="~/assets/images/dev2-head.png"
           />
         </team-card>
       </div>

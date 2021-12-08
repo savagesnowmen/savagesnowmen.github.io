@@ -42,7 +42,12 @@ module.exports = {
         '56vw': '56vw'
       },
       minHeight: {
-        '10rem': '10rem'
+        '10rem': '10rem',
+        '565px': '565px'
+      },
+      minWidth: {
+        '7em': '7em',
+        '1000px': '1000px'
       }
     },
   },
