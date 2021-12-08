@@ -221,14 +221,14 @@
             src="~/assets/images/team-karoh-3.png"
           />
         </team-card>
-        <team-card name="Dev">
+        <team-card name="BaconDev">
           <img
             class="h-16rem object-contain"
             fit="contain"
             src="~/assets/images/dev1-head.png"
           />
         </team-card>
-        <team-card name="Dev">
+        <team-card name="BeardDev">
           <img
             class="h-16rem object-contain"
             fit="contain"
