@@ -250,7 +250,7 @@ export default {
   data() {
     return {
       qty: 1,
-      minted: 100,
+      minted: 0,
       totalSupply: 10000,
     };
   },
