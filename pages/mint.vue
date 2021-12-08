@@ -25,7 +25,7 @@
             snowman first. Nothing personal, just want to make sure you aren’t
             just anybody. The Lodge consists of only the most savage, laid back
             avax chads in all the snow caps. Fresh pow on deck, heaters inside,
-            beer on tap, nothing beats The Lodge. You understand now right?
+            beer on tap, nothing beats The Lodge. You understand now, right?
           </div>
           <div class="hidden md:block m-8">
             <img class="w-12rem" src="~/assets/images/snowman-head-joint.png" />
