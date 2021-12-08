@@ -199,38 +199,38 @@
         engaging in. We collided our mixed passions for NFTs, Art, Socializing,
         Gaming and DeFi to create Savage Snowmen.
       </div>
-      <div class="flex flex-row flex-wrap mx-8 justify-center">
-        <team-card name="Frosty">
+      <div class="flex flex-row flex-wrap mx-8 mt-8 justify-center items-center">
+        <team-card name="Frosty" twitter="https://twitter.com/SavageFrosty_">
           <img
-            class="w-12rem h-24rem object-contain"
+            class="h-16rem object-contain"
             fit="contain"
             src="~/assets/images/team-frosty-1.png"
           />
         </team-card>
-        <team-card name="Esco">
+        <team-card name="Esco" twitter="https://twitter.com/AvaxEsco">
           <img
-            class="w-12rem h-24rem object-contain"
+            class="h-16rem object-contain"
             fit="contain"
             src="~/assets/images/team-esco-2.png"
           />
         </team-card>
-        <team-card name="Karoh">
+        <team-card name="Karoh" twitter="https://twitter.com/KarohNFT">
           <img
-            class="w-12rem h-24rem object-contain"
+            class="h-16rem object-contain"
             fit="contain"
             src="~/assets/images/team-karoh-3.png"
           />
         </team-card>
         <team-card name="Dev">
           <img
-            class="w-12rem h-24rem object-contain"
+            class="h-16rem object-contain"
             fit="contain"
             src="~/assets/images/dev1-head.png"
           />
         </team-card>
         <team-card name="Dev">
           <img
-            class="w-14rem h-24rem object-contain"
+            class="h-16rem object-contain"
             fit="contain"
             src="~/assets/images/dev2-head.png"
           />

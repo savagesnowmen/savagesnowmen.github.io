@@ -35,6 +35,7 @@ module.exports = {
       height: {
         '8rem': '8rem',
         '12rem': '12rem',
+        '14rem': '14rem',
         '16rem': '16rem',
         '20rem': '20rem',
         '24rem': '24rem',
