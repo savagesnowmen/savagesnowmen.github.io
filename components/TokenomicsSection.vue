@@ -11,20 +11,18 @@
           <p>
             Initial Supply: 20 million<br />
             Available Supply: 100 million<br />
-            Total Supply: 250 million
+            Total Supply: 250 million<br />
           </p>
-          <h4 class="underline md:text-2xl mt-4">Initial liquidity:</h4>
+          <h4 class="underline">Initial liquidity:</h4>
           <p>
             20 million $LODGE & 625 AVAX.<br />
-            Will be locked.
           </p>
-          <h4 class="underline md:text-2xl mt-4">How To Earn $LODGE:</h4>
+          <h4 class="underline">How To Earn $LODGE:</h4>
           <p>
-            - Stake Snowman or Snowmen in Vault, reducing Snowmen circulating
+            -Stake Snowmen in Vault, reducing Snowmen circulating
             supply.<br />
-            - Add liquidity on Trader Joe and stake LP tokens into Snowmen
+            -Add LODGE/AVAX liquidity on Trader Joe and stake LP tokens in the LODGE
             Farm.<br />
-            incentivizing locked liquidity.
           </p>
         </div>
       </div>
