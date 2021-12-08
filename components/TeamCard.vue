@@ -1,6 +1,6 @@
 
 <template>
-  <div class="mx-8">
+  <div class="mx-4">
     <div>
         <slot/>
     </div>

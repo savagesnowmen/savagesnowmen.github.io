@@ -30,12 +30,6 @@
       } w-full md:w-unset md:visible md:absolute md:right-1 md:ml-4 md:flex-row flex-wrap`"
     >
       <s-link
-        v-if="$route.path != '/'"
-        to="/"
-        class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
-        >Home</s-link
-      >
-      <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         to="/farm"
         >Farm</s-link>

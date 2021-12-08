@@ -11,24 +11,23 @@
       />
     </section>
     <!-- the minting section -->
-    <section class="w-full bg-gray-100 p-4">
+    <section class="w-full bg-gray-100 p-4 py-8">
       <div class="container mx-auto">
-        <div class="flex md:flex-row justify-center">
-          <div class="hidden md:block m-8">
+        <div class="flex md:flex-row justify-center mb-8">
+          <div class="hidden md:block m-8 w-12rem">
             <img
-              class="w-12rem"
               src="~/assets/images/snowman-head-red-hat.png"
             />
           </div>
-          <div class="text-center text-xl md:text-2xl lg:w-2/3">
+          <div class="text-center text-xl lg:text-2xl  md:w-2/3">
             Welcome to The Lodge. If you want to be a member you’ll need a
             snowman first. Nothing personal, just want to make sure you aren’t
             just anybody. The Lodge consists of only the most savage, laid back
             avax chads in all the snow caps. Fresh pow on deck, heaters inside,
             beer on tap, nothing beats The Lodge. You understand now, right?
           </div>
-          <div class="hidden md:block m-8">
-            <img class="w-12rem" src="~/assets/images/snowman-head-joint.png" />
+          <div class="hidden md:block m-8 w-12rem">
+            <img src="~/assets/images/snowman-head-joint.png" />
           </div>
         </div>
         <!-- the minting row -->
@@ -55,7 +54,7 @@
       </div>
     </section>
     <!-- mint roadmap -->
-    <section class="relative" style="min-height: 56vw">
+    <section class="relative py-8" style="min-height: 56vw">
       <div class="container mx-auto flex flex-col justify-center">
         <h2 class="text-center text-5xl">Mint Roadmap</h2>
         <div class="flex flex-col items-center">
@@ -99,7 +98,7 @@
       />
     </section>
     <!-- savage snowmen roadmap -->
-    <section>
+    <section class="py-8">
       <div class="mx-auto">
         <h2 class="text-center text-3xl md:text-5xl mt-8 mb-4">
           Savage Snowmen Roadmap
@@ -150,7 +149,7 @@
       </div>
     </section>
     <!--snowman rarity -->
-    <section class="bg-gray-100">
+    <section class="bg-gray-100 py-8">
       <h2 class="text-center m-4 text-3xl md:text-5xl">Snowmen Rarity</h2>
       <div class="flex flex-col md:flex-row">
         <div class="mx-4 mb-4 lg:w-2/5">
@@ -191,7 +190,7 @@
     <!-- tokenomics -->
     <tokenomics-section />
     <!-- team -->
-    <section class="p-4 bg-gray-100 pb-12">
+    <section class="p-4 py-8 bg-gray-100 pb-12">
       <h2 class="text-3xl md:text-5xl text-center">Team</h2>
       <div class="text-center text-xl md:text-2xl lg:w-3/4 mx-auto">
         After experiencing the power of Avalanche first hand, our team of 5 came
@@ -202,35 +201,35 @@
       <div class="flex flex-row flex-wrap mx-8 mt-8 justify-center items-center">
         <team-card name="Frosty" twitter="https://twitter.com/SavageFrosty_">
           <img
-            class="h-16rem object-contain"
+            class="h-12rem object-contain"
             fit="contain"
             src="~/assets/images/team-frosty-1.png"
           />
         </team-card>
         <team-card name="Esco" twitter="https://twitter.com/AvaxEsco">
           <img
-            class="h-16rem object-contain"
+            class="h-12rem object-contain"
             fit="contain"
             src="~/assets/images/team-esco-2.png"
           />
         </team-card>
         <team-card name="Karoh" twitter="https://twitter.com/KarohNFT">
           <img
-            class="h-16rem object-contain"
+            class="h-12rem object-contain"
             fit="contain"
             src="~/assets/images/team-karoh-3.png"
           />
         </team-card>
         <team-card name="BaconDev">
           <img
-            class="h-16rem object-contain"
+            class="h-12rem object-contain"
             fit="contain"
             src="~/assets/images/dev1-head.png"
           />
         </team-card>
         <team-card name="BeardDev">
           <img
-            class="h-16rem object-contain"
+            class="h-12rem object-contain"
             fit="contain"
             src="~/assets/images/dev2-head.png"
           />

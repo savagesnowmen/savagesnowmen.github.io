@@ -8,7 +8,7 @@
     </main>
 
     <footer class="bg-black">
-      <div class="flex flex-row justify-between m-2">
+      <div class="flex flex-row justify-between p-2">
         <social-icons/>
         <div class="flex flex-row">
           <s-button class="bg-indigo-500" to="/mint">Mint</s-button>

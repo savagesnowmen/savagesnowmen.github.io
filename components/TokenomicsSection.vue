@@ -1,12 +1,12 @@
 
 <template>
-    <section>
+    <section class="py-8">
       <h2 class="text-3xl md:text-5xl m-4 text-center">Snowmen Tokenomics</h2>
       <div class="flex flex-col md:flex-row">
         <div class="hidden md:block m-4 w-2/3 m-8">
           <img src="~/assets/images/tokenomics-diagram.png" />
         </div>
-        <div class="bg-gray-200 m-4 p-4 rounded-lg text-xl  lg:w-1/3">
+        <div class="bg-gray-100 m-4 p-4 rounded-lg text-xl  lg:w-1/3">
           <h4 class="underline md:text-2xl">$LODGE Tokenomics:</h4>
           <p>
             Initial Supply: 20 million<br />
@@ -26,28 +26,20 @@
           </p>
         </div>
       </div>
-      <div class="bg-gray-200 rounded-lg m-4 mb-8 p-4 text-xl lg:w-5/6 sm:mx-auto">
+      <div class="bg-gray-100 rounded-lg m-4 mb-8 p-4 text-xl lg:w-5/6 sm:mx-auto">
         <span class="underline md:text-2xl">Snowmen Treasury:</span>
-        <ul >
-          <li>
-            - 20% of mint & 2.5% of each secondary market sale is allocated to
-            the treasury.
-          </li>
-          <li>
-            - Buy back $LODGE on the open market putting more AVAX into the
-            liquidity pool in ratio to $LODGE.
-          </li>
-          <li>- Burn $LODGE to decrease supply making the token more scarce.</li>
-          <li>
-            - Airdrop massive rewards to LP & Snowmen stakers incentivizing the
-            Snowmen ecosystem.
-          </li>
-          <li>
-            -Invest funds into yield farming protocols, generating stable
+        <p>
+          -20% of mint & 2.5% of each secondary market sale is allocated to
+            the treasury.<br/>
+          -Buy back $LODGE on the open market putting more AVAX into the
+            liquidity pool in ratio to $LODGE.<br/>
+          -Burn $LODGE to decrease supply making the token more scarce.<br/>
+          -Airdrop massive rewards to LP & Snowmen stakers incentivizing the
+            Snowmen ecosystem.<br/>
+          -Invest funds into yield farming protocols, generating stable
             revenue in order to sustain the positive feedback loop and grow the
-            Snowmen ecosystem.
-          </li>
-        </ul>
+            Snowmen ecosystem.<br/>
+        </p>
       </div>
     </section>
 </template>
