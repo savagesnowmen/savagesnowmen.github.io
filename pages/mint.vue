@@ -62,33 +62,33 @@
           <roadmap-box>
             <template v-slot:percent> 25% </template>
             <template v-slot:text>
-              -1,250 AVAX allocated to the Snowmen Treasury. -Liquidity Pool
-              (LDOGE-AVAX) opens on Trader Joe. -625 AVAX paired with LODGE and
-              added to the pool as initial liquidity.>
+              -1,250 AVAX allocated to the Snowmen Treasury.<br />
+              -Liquidity Pool (LDOGE-AVAX) opens on Trader Joe.<br />
+              -625 AVAX paired with LODGE and added to the pool as initial liquidity.
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 50% </template>
             <template v-slot:text>
-              -2,500 AVAX allocated to the Snowmen Treasury. -The Snowmen
-              Treasury begins $LODGE buy backs. -Random airdrops to stakers & LP
-              farmers begin.
+              -2,500 AVAX allocated to the Snowmen Treasury.<br />
+              -The Snowmen Treasury begins $LODGE buy backs.<br />
+              -10 AVAX giveaway to 3 Snowmen holders.
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 75% </template>
             <template v-slot:text>
-              -3,750 AVAX allocated to the Snowmen Treasury. -The Snowmen
-              Treasury begins burning $LODGE. -Giveaway of 10 Snowmen to Chad
-              holders.
+              -3,750 AVAX allocated to the Snowmen Treasury.<br />
+              -The Snowmen Treasury begins burning $LODGE.<br />
+              -Random airdrops to stakers & LP farmers begin.
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 100% </template>
             <template v-slot:text>
-              -Snowmen Treasury is chalk full of AVAX. -The Lodge + $LODGE
-              utility reveal. -Savage Snowmen launch party (special guests,
-              holders free entry)
+              -Snowmen Treasury is chalk full of AVAX.<br />
+              -Giveaway of 10 Snowmen to Snowmen stakers.<br />
+              -Savage Snowmen launch party (holders free entry)
             </template>
           </roadmap-box>
         </div>
@@ -129,8 +129,8 @@
                 Phase 2
               </div>
               <p class="my-2 text-xl">
-                Mint a Snowman to join like-minded Avax Chads in The Lodge. We
-                all just like to have a good time and enjoy Avalanche.
+                Stake your Snowman and start earning $LODGE! 
+                The earlier you accumulate the better. $LODGE is our meta token and the currency of The Lodge.
               </p>
             </div>
             <div class="p-4">
@@ -141,8 +141,8 @@
                 Phase 3
               </div>
               <p class="my-2 text-xl">
-                Mint a Snowman to join like-minded Avax Chads in The Lodge. We
-                all just like to have a good time and enjoy Avalanche.
+                Get your team to The Lodge first! Collaborate with fellow giga-brain Snowmen 
+                to solve the mystery of the Savage Snowmen.
               </p>
             </div>
           </div>
