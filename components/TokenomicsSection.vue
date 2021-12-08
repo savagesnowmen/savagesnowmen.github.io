@@ -19,10 +19,10 @@
           </p>
           <h4 class="underline">How To Earn $LODGE:</h4>
           <p>
-            -Stake Snowman or Snowmen in Vault, reducing Snowmen circulating
+            -Stake Snowmen in Vault, reducing Snowmen circulating
             supply.<br />
-            -Add liquidity on Trader Joe and stake LP tokens into Snowmen
-            Farm, incentivizing locked liquidity.<br />
+            -Add LODGE/AVAX liquidity on Trader Joe and stake LP tokens in the LODGE
+            Farm.<br />
           </p>
         </div>
       </div>
