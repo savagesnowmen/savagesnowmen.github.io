@@ -31,13 +31,13 @@
     >
       <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
-        to="/farm"
+        to="/"
         >Farm</s-link>
       <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
-        to="/stake"
+        to="/"
         >Stake</s-link>
-      <s-link to="/my-snowmen" class="bg-indigo-500 text-2xl border-4 mx-2 px-2">My Snowmen</s-link>
+      <s-link to="/" class="bg-indigo-500 text-2xl border-4 mx-2 px-2">My Snowmen</s-link>
       <!--<s-button class="bg-indigo-500 text-2xl border-4 px-2">Stake</s-button> -->
       <s-button @click.native="connect()"
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
