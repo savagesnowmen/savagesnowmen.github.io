@@ -13,7 +13,7 @@
 
     <div class="container mx-auto">
       <div class="md:pt-32">
-        <div class="mx-auto md:w-1/2">
+        <div class="mx-auto md:w-28rem" style="transform: translateX(-3rem)">
           <story-box />
         </div>
       </div>

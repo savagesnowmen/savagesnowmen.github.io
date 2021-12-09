@@ -15,11 +15,9 @@
       <div class="container mx-auto">
         <div class="flex md:flex-row justify-center mb-8">
           <div class="hidden md:block m-8 w-12rem">
-            <img
-              src="~/assets/images/snowman-head-red-hat.png"
-            />
+            <img src="~/assets/images/snowman-head-red-hat.png" />
           </div>
-          <div class="text-center text-xl lg:text-2xl  md:w-2/3">
+          <div class="text-center text-xl lg:text-2xl md:w-2/3">
             Welcome to The Lodge. If you want to be a member you’ll need a
             snowman first. Nothing personal, just want to make sure you aren’t
             just anybody. The Lodge consists of only the most savage, laid back
@@ -56,6 +54,70 @@
     <!-- mint roadmap -->
     <section class="relative py-8" style="min-height: 56vw">
       <div class="container mx-auto flex flex-col justify-center">
+        <div
+          style="top: 0vw; left: 80vw"
+          class="
+            opacity-0
+            hover:opacity-100
+            absolute
+            w-12rem
+            h-12rem
+            z-50
+          "
+        >
+          <img
+            class="w-24 absolute bottom-0 right-0"
+            src="~/assets/images/skier4.png"
+          />
+        </div>
+        <div
+          style="top: 10vw; left: 0"
+          class="
+            opacity-0
+            hover:opacity-100
+            absolute
+            w-12rem
+            h-12rem
+            z-10
+          "
+        >
+          <img
+            class="w-24 absolute bottom-0 left-3rem"
+            src="~/assets/images/skier3.png"
+          />
+        </div>
+        <div
+          style="top: 25vw; left: 80vw"
+          class="
+            opacity-0
+            hover:opacity-100
+            absolute
+            w-12rem
+            h-12rem
+            z-10
+          "
+        >
+          <img
+            class="w-24 absolute bottom-0 left-3rem"
+            src="~/assets/images/skier2.png"
+          />
+        </div>
+        <div
+          style="top: 39vw; left: 0"
+          class="
+            opacity-0
+            hover:opacity-100
+            absolute
+            w-12rem
+            h-12rem
+            z-10
+          "
+        >
+          <img
+            class="w-24 absolute bottom-0 right-0"
+            src="~/assets/images/skier1.png"
+          />
+        </div>
         <h2 class="text-center text-5xl">Mint Roadmap</h2>
         <div class="flex flex-col items-center">
           <roadmap-box>
@@ -63,7 +125,8 @@
             <template v-slot:text>
               -1,250 AVAX allocated to the Snowmen Treasury.<br />
               -Liquidity Pool (LDOGE-AVAX) opens on Trader Joe.<br />
-              -625 AVAX paired with LODGE and added to the pool as initial liquidity.
+              -625 AVAX paired with LODGE and added to the pool as initial
+              liquidity.
             </template>
           </roadmap-box>
           <roadmap-box>
@@ -128,8 +191,9 @@
                 Phase 2
               </div>
               <p class="my-2 text-xl">
-                Stake your Snowman and start earning $LODGE! 
-                The earlier you accumulate the better. $LODGE is our meta token and the currency of The Lodge.
+                Stake your Snowman and start earning $LODGE! The earlier you
+                accumulate the better. $LODGE is our meta token and the currency
+                of The Lodge.
               </p>
             </div>
             <div class="p-4">
@@ -140,8 +204,8 @@
                 Phase 3
               </div>
               <p class="my-2 text-xl">
-                Get your team to The Lodge first! Collaborate with fellow giga-brain Snowmen 
-                to solve the mystery of the Savage Snowmen.
+                Get your team to The Lodge first! Collaborate with fellow
+                giga-brain Snowmen to solve the mystery of the Savage Snowmen.
               </p>
             </div>
           </div>
@@ -198,7 +262,9 @@
         engaging in. We collided our mixed passions for NFTs, Art, Socializing,
         Gaming and DeFi to create Savage Snowmen.
       </div>
-      <div class="flex flex-row flex-wrap mx-8 mt-8 justify-center items-center">
+      <div
+        class="flex flex-row flex-wrap mx-8 mt-8 justify-center items-center"
+      >
         <team-card name="Frosty" twitter="https://twitter.com/SavageFrosty_">
           <img
             class="h-12rem object-contain"
