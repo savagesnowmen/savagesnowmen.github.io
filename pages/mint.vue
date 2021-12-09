@@ -57,6 +57,8 @@
         <div
           style="top: 0vw; left: 80vw"
           class="
+            hidden
+            md:block
             opacity-0
             hover:opacity-100
             absolute
@@ -71,8 +73,10 @@
           />
         </div>
         <div
-          style="top: 10vw; left: 0"
+          style="top: 15vw; left: 0"
           class="
+            hidden
+            md:block
             opacity-0
             hover:opacity-100
             absolute
@@ -87,8 +91,10 @@
           />
         </div>
         <div
-          style="top: 25vw; left: 80vw"
+          style="top: 30vw; left: 80vw"
           class="
+            hidden
+            md:block
             opacity-0
             hover:opacity-100
             absolute
@@ -103,8 +109,10 @@
           />
         </div>
         <div
-          style="top: 39vw; left: 0"
+          style="top: 45vw; left: 0"
           class="
+            hidden
+            md:block
             opacity-0
             hover:opacity-100
             absolute
@@ -119,7 +127,7 @@
           />
         </div>
         <h2 class="text-center text-5xl">Mint Roadmap</h2>
-        <div class="flex flex-col items-center">
+        <div class="flex flex-col items-center p-4">
           <roadmap-box>
             <template v-slot:percent> 25% </template>
             <template v-slot:text>
