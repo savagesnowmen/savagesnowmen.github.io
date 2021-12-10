@@ -24,7 +24,7 @@ export default {
   data() {
     return {
       blurbs: [
-        "Ahh the good ole days of Aspen in the 80s. Sex, drugs, and rock and roll. There wasn’t a care in the world within that great town of fresh powder (oh you were thinking of snow! Yeah that too). Man, the partying just never stopped. that was before the great avalanches began...",
+        "Ahh the good ole days of Aspen in the 80s. Sex, drugs, and rock and roll. There wasn’t a care in the world within that great town of fresh powder (oh you were thinking of snow! Yeah that too). Man, the partying just never stopped. That was before the great avalanches began...",
         "The seismologists and geologists couldn’t figure out what caused them, but every occurrence was wiping out hundreds of park goers. Soon they got so bad people started skipping the slopes and staying inside. It meant more partying anyway...",
         "A couple of weeks passed and the avalanches calmed down. The park goers mustered up the courage to get back out there and shred some pow. Next thing you know the park was packed again - who could resist wide open slopes. Then came the biggest avalanche yet. And it wiped out half the mountain…",
         "The town was devastated and the park closed for the rest of the season. As time went on, the park would close if anyone even mentioned the word ‘avalanche’. It was better to be safe than sorry…",
