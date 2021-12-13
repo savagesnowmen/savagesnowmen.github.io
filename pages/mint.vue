@@ -131,34 +131,35 @@
           <roadmap-box>
             <template v-slot:percent> 25% </template>
             <template v-slot:text>
-              -1,250 AVAX allocated to the Snowmen Treasury.<br />
-              -Liquidity Pool (LDOGE-AVAX) opens on Trader Joe.<br />
-              -625 AVAX paired with LODGE and added to the pool as initial
-              liquidity.
+            -Opening of LODGE Liquidity Pool on Trader Joe.<br />
+            -20 million LODGE with AVAX for initial liquidity.<br />
+            -20% of mint allocated to the Snowmen Treasury (treasury allocation built into the smart contract.)
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 50% </template>
             <template v-slot:text>
-              -2,500 AVAX allocated to the Snowmen Treasury.<br />
-              -The Snowmen Treasury begins $LODGE buy backs.<br />
-              -10 AVAX giveaway to 3 Snowmen holders.
+            -Snowmen Treasury is 50% full.<br />
+            -$LODGE buy backs begin.<br />
+            -Random airdrops to stakers & LP farmers begin.<br />
+            -5 AVAX giveaway to 3 Snowmen holders.
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 75% </template>
             <template v-slot:text>
-              -3,750 AVAX allocated to the Snowmen Treasury.<br />
-              -The Snowmen Treasury begins burning $LODGE.<br />
-              -Random airdrops to stakers & LP farmers begin.
+            -Snowmen Treasury is 75% full.<br />
+            -10 AVAX giveaway to 3 Snowmen holders.<br />
+            -$LODGE burns begin.. and MORE BUYBACKS!
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 100% </template>
             <template v-slot:text>
-              -Snowmen Treasury is chalk full of AVAX.<br />
-              -Giveaway of 10 Snowmen to Snowmen stakers.<br />
-              -Savage Snowmen launch party (holders free entry)
+            -Snowmen Treasury is 100% full.<br />
+            -Giveaway of 10 Snowmen to Snowmen stakers.<br />
+            -Savage Snowmen launch party (holders free entry.)<br />
+            -Oh yeah.. and even more buybacks. 
             </template>
           </roadmap-box>
         </div>
@@ -212,8 +213,8 @@
                 Phase 3
               </div>
               <p class="my-2 text-xl">
-                Get your team to The Lodge first! Collaborate with fellow
-                giga-brain Snowmen to solve the mystery of the Savage Snowmen.
+              Recieve your Airdrop and get your team to The Lodge first by Collaborating 
+              with fellow giga-brain Snowmen to solve the mystery of the Savage Snowmen.
               </p>
             </div>
           </div>
@@ -267,8 +268,8 @@
       <div class="text-center text-xl md:text-2xl lg:w-3/4 mx-auto">
         After experiencing the power of Avalanche first hand, our team of 5 came
         together to work on something that we would have fun building and
-        engaging in. We collided our mixed passions for NFTs, Art, Socializing,
-        Gaming and DeFi to create Savage Snowmen.
+        engaging in. We collided our mixed passions for Art, Socializing,
+        Gaming and Finance to create Savage Snowmen.
       </div>
       <div
         class="flex flex-row flex-wrap mx-8 mt-8 justify-center items-center"
