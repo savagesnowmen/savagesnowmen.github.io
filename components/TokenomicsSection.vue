@@ -15,7 +15,7 @@
           </p>
           <h4 class="underline md:text-2xl mt-4">Initial liquidity:</h4>
           <p>
-            20 million $LODGE & 625 AVAX.<br />
+            20 million $LODGE paired with 500 AVAX.<br />
           </p>
           <h4 class="underline md:text-2xl mt-4">How To Earn $LODGE:</h4>
           <p>
@@ -31,14 +31,13 @@
         <p>
           -20% of mint & 2.5% of each secondary market sale is allocated to
             the treasury.<br/>
-          -Buy back $LODGE on the open market putting more AVAX into the
+          -Perpetual buybacks of $LODGE on the open market, adding more AVAX into the
             liquidity pool in ratio to $LODGE.<br/>
-          -Burn $LODGE to decrease supply making the token more scarce.<br/>
-          -Airdrop massive rewards to LP & Snowmen stakers incentivizing the
+          -Burn $LODGE to decrease supply, making the token more scarce.<br/>
+          -Airdrop massive rewards to LP & Snowmen stakers, incentivizing the
             Snowmen ecosystem.<br/>
-          -Invest funds into yield farming protocols, generating stable
-            revenue in order to sustain the positive feedback loop and grow the
-            Snowmen ecosystem.<br/>
+          -Diversify funds into yield farming protocols, generating stable returns 
+          to sustain the treasury and Snowmen ecosystem.<br/>
         </p>
       </div>
     </section>
