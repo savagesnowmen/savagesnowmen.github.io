@@ -1,5 +1,6 @@
 <template>
-  <section class="relative md:h-56vw md:min-h-565px md:min-w-1000px" >
+  <section class="relative md:h-56vw md:min-h-565px md:min-w-1000px p-2 py-8 md:py-0
+   md:p-0" >
     <nav class="hidden md:flex md:absolute md:w-1/5 md:mt-32 sm:ml-4 flex-col">
       <s-button class="bg-indigo-500 mb-10 md:text-2xl lg:text-3xl min-w-7em"
         >Connect Wallet</s-button
@@ -11,31 +12,33 @@
         <!--<s-button class="bg-indigo-500 text-2xl">Stake Snowmen</s-button> -->
     </nav>
 
-    <div class="container mx-auto">
-      <div class="md:pt-32">
-        <div class="mx-auto md:w-28rem" style="transform: translateX(-3rem)">
-          <story-box />
-        </div>
-      </div>
-    </div>
-
     <s-link
       to="/mint"
       class="
-        invisible
-        md:visible
+        block
+        w-full
+        md:inline
         md:text-2xl
         lg:text-4xl
         md:absolute
-        w-max-content
+        md:w-20rem
         transform
-        -translate-x-1/2 -translate-y-1/2
-        sm:left-77% sm:top-43vw
+        md:-translate-x-1/2 -translate-y-1/2
+        md:left-77% sm:top-43vw
         bg-red-500
       "
     >
       MINT SNOWMEN
     </s-link>
+
+    <div class="container mx-auto">
+      <div class="md:pt-32">
+        <div class="mx-auto md:w-28rem md:-translate-x-3rem">
+          <story-box />
+        </div>
+      </div>
+    </div>
+
 
     <social-icons
       class="mx-auto justify-center md:absolute md:bottom-1 md:left-1"

@@ -14,7 +14,7 @@
   >
     <NuxtLink to="/">
       <img
-        class="w-16rem md:w-32rem "
+        class="w-14rem md:w-32rem "
         src="~/assets/images/savage-snowman-logo.png"
       />
     </NuxtLink>

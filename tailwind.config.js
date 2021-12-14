@@ -32,7 +32,8 @@ module.exports = {
         '28rem': '28rem',
         '32rem': '32rem',
         'unset': 'unset',
-        '50px': '50px'
+        '50px': '50px',
+        'maxContent': 'max-content'
       },
       height: {
         '8rem': '8rem',
@@ -51,6 +52,12 @@ module.exports = {
       minWidth: {
         '7em': '7em',
         '1000px': '1000px'
+      },
+      translateX: {
+        '-3rem': '-3rem'
+      },
+      translate: {
+        '-3rem': '-3rem'
       }
     },
   },

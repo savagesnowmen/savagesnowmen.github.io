@@ -7,8 +7,8 @@
     <p class="absolute text-sm bottom-0 right-0 text-gray-400 p-2 px-4">{{ step + 1 }} / {{blurbs.length}}</p>
   </div>
   <div class="flex flex-row flex-wrap justify-evenly">
-    <s-link to="/mint" class="text-2xl bg-red-500 mx-2">THAT'S ENOUGH OLD MAN</s-link>
-    <s-button class="text-2xl bg-red-500 mx-2" @click.native="step = (step + 1) % blurbs.length">TELL ME MORE!</s-button>
+    <s-link to="/mint" class="text-2xl bg-red-500 md:mx-2">THAT'S ENOUGH OLD MAN</s-link>
+    <s-button class="text-2xl bg-red-500 md:mx-2" @click.native="step = (step + 1) % blurbs.length">TELL ME MORE!</s-button>
   </div>
 </div>
 </template>
