@@ -14,7 +14,7 @@
   >
     <NuxtLink to="/">
       <img
-        class="w-14rem md:w-32rem "
+        class="w-14rem md:w-32rem"
         src="~/assets/images/savage-snowman-logo.png"
       />
     </NuxtLink>
@@ -32,16 +32,22 @@
       <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         to="/"
-        >Farm</s-link>
+        >Farm</s-link
+      >
       <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         to="/"
-        >Stake</s-link>
-      <s-link to="/" class="bg-indigo-500 text-2xl border-4 mx-2 px-2">My Snowmen</s-link>
+        >Stake</s-link
+      >
+      <s-link to="/" class="bg-indigo-500 text-2xl border-4 mx-2 px-2"
+        >My Snowmen</s-link
+      >
       <!--<s-button class="bg-indigo-500 text-2xl border-4 px-2">Stake</s-button> -->
-      <s-button @click.native="connect()"
+      <s-button
+        @click.native="connect()"
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
-        >Connect Wallet</s-button>
+        >Connect Wallet</s-button
+      >
     </nav>
   </header>
 </template>
@@ -56,7 +62,7 @@ const providerOptions = {
 const web3Modal = new Web3Modal({
   network: "mainnet", // optional
   cacheProvider: true, // optional
-  providerOptions // required
+  providerOptions, // required
 });
 
 export default {
@@ -70,10 +76,22 @@ export default {
     };
   },
   methods: {
-    async connect(){
-      const provider = await web3Modal.connect();
+    async connect() {
+      const web3 = new Web3(window.ethereum);
+      console.log("here");
+      // Load account
+      const accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+      const networkId = await web3.eth.net.getId();
+      console.log(networkId);
+      /* const provider = await web3Modal.connect();
       const web3 = new Web3(provider);
-    }
-  }
+      let accounts;
+      let getAccounts = await web3.eth
+        .getAccounts()
+        .then((acc) => (accounts = acc));
+      console.log(getAccounts, accounts); */
+    },
+  },
 };
 </script>
