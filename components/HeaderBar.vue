@@ -51,8 +51,16 @@
       >
       <s-button
         v-else
-        class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
-        >{{ account }}</s-button
+        class="
+          w-full
+          md:w-auto
+          bg-indigo-500
+          text-md text-gray-500
+          border-4
+          mx-2
+          px-2
+        "
+        >Connected (0x...{{ accountMsg }})</s-button
       >
     </nav>
   </header>
@@ -79,6 +87,7 @@ export default {
   data() {
     return {
       account: "",
+      accountMsg: "",
       showMenu: false,
     };
   },
@@ -102,6 +111,7 @@ export default {
       const accounts = await web3.eth.getAccounts();
       console.log(accounts);
       this.account = accounts[0];
+      this.accountMsg = this.account.substr(this.account.length - 4);
       const networkId = await web3.eth.net.getId();
       console.log(networkId);
       if (networkId !== 43113) alert("Wrong Network");
