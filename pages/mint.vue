@@ -131,35 +131,36 @@
           <roadmap-box>
             <template v-slot:percent> 25% </template>
             <template v-slot:text>
-            -Opening of LODGE Liquidity Pool on Trader Joe.<br />
-            -20 million LODGE with AVAX for initial liquidity.<br />
-            -20% of mint allocated to the Snowmen Treasury (treasury allocation built into the smart contract.)
+              -Opening of LODGE Liquidity Pool on Trader Joe.<br />
+              -20 million LODGE with AVAX for initial liquidity.<br />
+              -20% of mint allocated to the Snowmen Treasury (treasury
+              allocation built into the smart contract.)
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 50% </template>
             <template v-slot:text>
-            -Snowmen Treasury is 50% full.<br />
-            -$LODGE buy backs begin.<br />
-            -Random airdrops to stakers & LP farmers begin.<br />
-            -5 AVAX giveaway to 3 Snowmen holders.
+              -Snowmen Treasury is 50% full.<br />
+              -$LODGE buy backs begin.<br />
+              -Random airdrops to stakers & LP farmers begin.<br />
+              -5 AVAX giveaway to 3 Snowmen holders.
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 75% </template>
             <template v-slot:text>
-            -Snowmen Treasury is 75% full.<br />
-            -10 AVAX giveaway to 3 Snowmen holders.<br />
-            -$LODGE burns begin.. and MORE BUYBACKS!
+              -Snowmen Treasury is 75% full.<br />
+              -10 AVAX giveaway to 3 Snowmen holders.<br />
+              -$LODGE burns begin.. and MORE BUYBACKS!
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 100% </template>
             <template v-slot:text>
-            -Snowmen Treasury is 100% full.<br />
-            -Giveaway of 10 Snowmen to Snowmen stakers.<br />
-            -Savage Snowmen launch party (holders free entry.)<br />
-            -Oh yeah.. and even more buybacks. 
+              -Snowmen Treasury is 100% full.<br />
+              -Giveaway of 10 Snowmen to Snowmen stakers.<br />
+              -Savage Snowmen launch party (holders free entry.)<br />
+              -Oh yeah.. and even more buybacks.
             </template>
           </roadmap-box>
         </div>
@@ -213,8 +214,9 @@
                 Phase 3
               </div>
               <p class="my-2 text-xl">
-              Recieve your Airdrop and get your team to The Lodge first by Collaborating 
-              with fellow giga-brain Snowmen to solve the mystery of the Savage Snowmen.
+                Recieve your Airdrop and get your team to The Lodge first by
+                Collaborating with fellow giga-brain Snowmen to solve the
+                mystery of the Savage Snowmen.
               </p>
             </div>
           </div>
@@ -268,8 +270,8 @@
       <div class="text-center text-xl md:text-2xl lg:w-3/4 mx-auto">
         After experiencing the power of Avalanche first hand, our team of 5 came
         together to work on something that we would have fun building and
-        engaging in. We collided our mixed passions for Art, Socializing,
-        Gaming and Finance to create Savage Snowmen.
+        engaging in. We collided our mixed passions for Art, Socializing, Gaming
+        and Finance to create Savage Snowmen.
       </div>
       <div
         class="flex flex-row flex-wrap mx-8 mt-8 justify-center items-center"
@@ -315,6 +317,7 @@
 </template>
 
 <script>
+import Web3 from "web3";
 export default {
   metaInfo: {
     title: "Mint",
@@ -332,8 +335,17 @@ export default {
     increment(amount = 1) {
       this.qty = Math.max(1, this.qty + amount);
     },
-    mint() {
-      console.log("call minting function");
+    async mint() {
+      const contract_abi = require("../abi/SavageSnowmen.json");
+      const web3 = new Web3(window.ethereum);
+      console.log(contract_abi.abi);
+      await window.ethereum.enable();
+      const NameContract = new web3.eth.Contract(
+        contract_abi.abi,
+        "0xd53D29ACDF1B25c46B47312a1C8c241a719AadB3"
+      );
+      const accounts = await web3.eth.getAccounts();
+      await NameContract.methods.mint(this.qty).send({ from: accounts[0] });
     },
   },
 };

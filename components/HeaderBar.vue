@@ -44,9 +44,15 @@
       >
       <!--<s-button class="bg-indigo-500 text-2xl border-4 px-2">Stake</s-button> -->
       <s-button
+        v-if="account == ''"
         @click.native="connect()"
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         >Connect Wallet</s-button
+      >
+      <s-button
+        v-else
+        class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
+        >{{ account }}</s-button
       >
     </nav>
   </header>
@@ -72,18 +78,33 @@ export default {
   },
   data() {
     return {
+      account: "",
       showMenu: false,
     };
   },
   methods: {
     async connect() {
-      const web3 = new Web3(window.ethereum);
-      console.log("here");
+      let ethereum = window.ethereum;
+      let web3 = window.web3;
+      await ethereum.enable();
+      if (typeof ethereum !== "undefined") {
+        await ethereum.enable();
+        web3 = new Web3(ethereum);
+      } else if (typeof web3 !== "undefined") {
+        web3 = new Web3(web3.currentProvider);
+      } else {
+        web3 = new Web3(
+          new Web3.providers.HttpProvider(process.env.WEB3_PROVIDER)
+        );
+      }
+      /* const web3 = new Web3(Web3.givenProvider || "http://localhost:8545"); */
       // Load account
       const accounts = await web3.eth.getAccounts();
       console.log(accounts);
+      this.account = accounts[0];
       const networkId = await web3.eth.net.getId();
       console.log(networkId);
+      if (networkId !== 43113) alert("Wrong Network");
       /* const provider = await web3Modal.connect();
       const web3 = new Web3(provider);
       let accounts;
