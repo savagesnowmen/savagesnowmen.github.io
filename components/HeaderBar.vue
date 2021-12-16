@@ -14,7 +14,7 @@
   >
     <NuxtLink to="/">
       <img
-        class="w-14rem md:w-32rem "
+        class="w-14rem md:w-32rem"
         src="~/assets/images/savage-snowman-logo.png"
       />
     </NuxtLink>
@@ -32,16 +32,36 @@
       <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         to="/"
-        >Farm</s-link>
+        >Farm</s-link
+      >
       <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         to="/"
-        >Stake</s-link>
-      <s-link to="/" class="bg-indigo-500 text-2xl border-4 mx-2 px-2">My Snowmen</s-link>
+        >Stake</s-link
+      >
+      <s-link to="/" class="bg-indigo-500 text-2xl border-4 mx-2 px-2"
+        >My Snowmen</s-link
+      >
       <!--<s-button class="bg-indigo-500 text-2xl border-4 px-2">Stake</s-button> -->
-      <s-button @click.native="connect()"
+      <s-button
+        v-if="account == ''"
+        @click.native="connect()"
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
-        >Connect Wallet</s-button>
+        >Connect Wallet</s-button
+      >
+      <s-button
+        v-else
+        class="
+          w-full
+          md:w-auto
+          bg-indigo-500
+          text-md text-gray-500
+          border-4
+          mx-2
+          px-2
+        "
+        >Connected (0x...{{ accountMsg }})</s-button
+      >
     </nav>
   </header>
 </template>
@@ -56,7 +76,7 @@ const providerOptions = {
 const web3Modal = new Web3Modal({
   network: "mainnet", // optional
   cacheProvider: true, // optional
-  providerOptions // required
+  providerOptions, // required
 });
 
 export default {
@@ -66,14 +86,43 @@ export default {
   },
   data() {
     return {
+      account: "",
+      accountMsg: "",
       showMenu: false,
     };
   },
   methods: {
-    async connect(){
-      const provider = await web3Modal.connect();
+    async connect() {
+      let ethereum = window.ethereum;
+      let web3 = window.web3;
+      await ethereum.enable();
+      if (typeof ethereum !== "undefined") {
+        await ethereum.enable();
+        web3 = new Web3(ethereum);
+      } else if (typeof web3 !== "undefined") {
+        web3 = new Web3(web3.currentProvider);
+      } else {
+        web3 = new Web3(
+          new Web3.providers.HttpProvider(process.env.WEB3_PROVIDER)
+        );
+      }
+      /* const web3 = new Web3(Web3.givenProvider || "http://localhost:8545"); */
+      // Load account
+      const accounts = await web3.eth.getAccounts();
+      console.log(accounts);
+      this.account = accounts[0];
+      this.accountMsg = this.account.substr(this.account.length - 4);
+      const networkId = await web3.eth.net.getId();
+      console.log(networkId);
+      if (networkId !== 43113) alert("Wrong Network");
+      /* const provider = await web3Modal.connect();
       const web3 = new Web3(provider);
-    }
-  }
+      let accounts;
+      let getAccounts = await web3.eth
+        .getAccounts()
+        .then((acc) => (accounts = acc));
+      console.log(getAccounts, accounts); */
+    },
+  },
 };
 </script>
