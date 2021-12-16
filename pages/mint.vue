@@ -345,7 +345,14 @@ export default {
         "0xd53D29ACDF1B25c46B47312a1C8c241a719AadB3"
       );
       const accounts = await web3.eth.getAccounts();
-      await NameContract.methods.mint(this.qty).send({ from: accounts[0] });
+      await NameContract.methods
+        .mint(this.qty)
+        .send({ from: accounts[0] })
+        .then(console.log("Started mint function"))
+        .catch((err) => {
+          console.log(err);
+          alert(err.message);
+        });
     },
   },
 };
