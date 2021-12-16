@@ -1,10 +1,7 @@
 <template>
   <div>
     <section class="relative md:h-56vw">
-      <img
-        class="hidden md:block w-1/4 absolute top-13vw left-20vw"
-        src="~/assets/images/snowmen-carousel.gif"
-      />
+      <iframe class="w-full sm:w-4/5 my-8 md:w-2/5 mx-auto md:absolute md:top-13vw md:left-8vw" width="560" height="315" src="https://www.youtube.com/embed/3PrQKr4-dS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <img
         class="invisible md:visible w-full absolute top-0 -z-1"
         src="~/assets/images/mint-page-hero.jpeg"
@@ -224,7 +221,13 @@
     <!--snowman rarity -->
     <section class="bg-gray-100 py-8">
       <h2 class="text-center m-4 text-3xl md:text-5xl">Snowmen Rarity</h2>
-      <div class="flex flex-col md:flex-row">
+      <div class="flex flex-col md:flex-row md:flex-wrap items-center justify-center">
+
+        <div class="mx-4 mb-4 lg:w-2/5">
+          <img
+            src="~/assets/images/snowmen-carousel.gif"
+          />
+        </div>
         <div class="mx-4 mb-4 lg:w-2/5">
           <img src="~/assets/images/rarity-chart.png" />
         </div>
