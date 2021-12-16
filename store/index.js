@@ -1,7 +1,9 @@
 import Web3 from "web3";
 export const state = () => ({
-  accounts: [],
-  snowmen: []
+  account: '',
+  snowmen: [],
+  walletConnectionStatus: false,
+  networkId: ''
 })
 
 export const mutations = {
@@ -15,22 +17,23 @@ export const mutations = {
     const networkId = await web3.eth.net.getId();
     const networkData = Marketplace.networks[networkId];
   },
-  async web3functionality() {
+  async web3functionality(state) {
     window.addEventListener("load", function () {
       if (window.ethereum) {
         // use MetaMask's provider
         App.web3 = new Web3(window.ethereum);
-        window.ethereum.enable(); // get permission to access accounts
+        window.ethereum.enable().catch((err) => this.alert("Unable to connect to wallet.")); // get permission to access accounts
 
         // detect Metamask account change
         window.ethereum.on('accountsChanged', function (accounts) {
           console.log('accountsChanges', accounts);
-
+          state.account = accounts[0]
         });
 
         // detect Network account change
         window.ethereum.on('networkChanged', function (networkId) {
           console.log('networkChanged', networkId);
+          state.networkId = networkId
         });
       } else {
         console.warn(
