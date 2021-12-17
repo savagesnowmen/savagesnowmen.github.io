@@ -286,6 +286,37 @@ export default {
     title: "Mint",
   },
   layout: "WithFooter",
-  name: "Mint"
+  name: "Mint",
+  data() {
+    return {
+      qty: 1,
+      minted: 0,
+      totalSupply: 10000,
+    };
+  },
+  methods: {
+    increment(amount = 1) {
+      this.qty = Math.max(1, this.qty + amount);
+    },
+    async mint() {
+      const contract_abi = require("../abi/SavageSnowmen.json");
+      const web3 = new Web3(window.ethereum);
+      console.log(contract_abi.abi);
+      await window.ethereum.enable();
+      const NameContract = new web3.eth.Contract(
+        contract_abi.abi,
+        "0x8AE2823E151405A9D82Aa9d2F588aBaD7CC400B0"
+      );
+      const accounts = await web3.eth.getAccounts();
+      await NameContract.methods
+        .mint(this.qty)
+        .send({ from: accounts[0] })
+        .then(console.log("Started mint function"))
+        .catch((err) => {
+          console.log(err);
+          alert(err.message);
+        });
+    },
+  },
 };
 </script>
