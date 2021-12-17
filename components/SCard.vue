@@ -10,7 +10,7 @@
 export default {
   name: "SCard",
   props: {
-    img: string,
+    img: String,
     default: "",
   },
 };
