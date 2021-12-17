@@ -342,7 +342,7 @@ export default {
       await window.ethereum.enable();
       const NameContract = new web3.eth.Contract(
         contract_abi.abi,
-        "0xd53D29ACDF1B25c46B47312a1C8c241a719AadB3"
+        "0x8AE2823E151405A9D82Aa9d2F588aBaD7CC400B0"
       );
       const accounts = await web3.eth.getAccounts();
       await NameContract.methods

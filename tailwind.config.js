@@ -9,8 +9,8 @@ module.exports = {
     ]
   },
   mode: 'jit',
-  theme:{
-    extend:{
+  theme: {
+    extend: {
       zIndex: {
         '-1': '-1'
       },
@@ -18,7 +18,7 @@ module.exports = {
         '1': '1rem',
         '3rem': '3rem',
         '43vw': '43vw',
-        '77%' : '77%',
+        '77%': '77%',
         '13vw': '13vw',
         '20vw': '20vw'
       },
@@ -58,6 +58,10 @@ module.exports = {
       },
       translate: {
         '-3rem': '-3rem'
+      },
+      margin: {
+        '6rem': '6rem',
+        'auto': 'auto'
       }
     },
   },
