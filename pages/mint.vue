@@ -1,56 +1,14 @@
 <template>
   <div>
     <section class="relative md:h-56vw">
-      <img
-        class="hidden md:block w-1/4 absolute top-13vw left-20vw"
-        src="~/assets/images/snowmen-carousel.gif"
-      />
+      <iframe class="w-full sm:w-4/5 my-8 md:w-2/5 mx-auto md:absolute md:top-13vw md:left-8vw" width="560" height="315" src="https://www.youtube.com/embed/3PrQKr4-dS8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       <img
         class="invisible md:visible w-full absolute top-0 -z-1"
         src="~/assets/images/mint-page-hero.jpeg"
       />
     </section>
     <!-- the minting section -->
-    <section class="w-full bg-gray-100 p-4 py-8">
-      <div class="container mx-auto">
-        <div class="flex md:flex-row justify-center mb-8">
-          <div class="hidden md:block m-8 w-12rem">
-            <img src="~/assets/images/snowman-head-red-hat.png" />
-          </div>
-          <div class="text-center text-xl lg:text-2xl md:w-2/3">
-            Welcome to The Lodge. If you want to be a member you’ll need a
-            snowman first. Nothing personal, just want to make sure you aren’t
-            just anybody. The Lodge consists of only the most savage, laid back
-            avax chads in all the snow caps. Fresh pow on deck, heaters inside,
-            beer on tap, nothing beats The Lodge. You understand now, right?
-          </div>
-          <div class="hidden md:block m-8 w-12rem">
-            <img src="~/assets/images/snowman-head-joint.png" />
-          </div>
-        </div>
-        <!-- the minting row -->
-        <div class="flex flex-row flex-wrap items-center justify-center">
-          <div class="text-4xl cursor-pointer" @click="increment(-1)">-</div>
-          <div class="p-4 text-4xl">
-            {{ qty }}
-          </div>
-          <div class="text-4xl md:mr-8 cursor-pointer" @click="increment()">
-            +
-          </div>
-          <div>
-            <s-button class="text-4xl bg-red-500" @click.native="mint()"
-              >Mint Snowmen</s-button
-            >
-          </div>
-        </div>
-        <div class="flex flex-row flex-wrap justify-center items-center">
-          <div class="mx-4 text-2xl md:text-5xl">
-            {{ minted }} / {{ totalSupply }}
-          </div>
-          <div class="mx-4 text-2xl md:text-5xl">Have Joined The Lodge</div>
-        </div>
-      </div>
-    </section>
+    <mint-section/>
     <!-- mint roadmap -->
     <section class="relative py-8" style="min-height: 56vw">
       <div class="container mx-auto flex flex-col justify-center">
@@ -131,35 +89,36 @@
           <roadmap-box>
             <template v-slot:percent> 25% </template>
             <template v-slot:text>
-            -Opening of LODGE Liquidity Pool on Trader Joe.<br />
-            -20 million LODGE with AVAX for initial liquidity.<br />
-            -20% of mint allocated to the Snowmen Treasury (treasury allocation built into the smart contract.)
+              -Opening of LODGE Liquidity Pool on Trader Joe.<br />
+              -20 million LODGE with AVAX for initial liquidity.<br />
+              -20% of mint allocated to the Snowmen Treasury (treasury
+              allocation built into the smart contract.)
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 50% </template>
             <template v-slot:text>
-            -Snowmen Treasury is 50% full.<br />
-            -$LODGE buy backs begin.<br />
-            -Random airdrops to stakers & LP farmers begin.<br />
-            -5 AVAX giveaway to 3 Snowmen holders.
+              -Snowmen Treasury is 50% full.<br />
+              -$LODGE buy backs begin.<br />
+              -Random airdrops to stakers & LP farmers begin.<br />
+              -5 AVAX giveaway to 3 Snowmen holders.
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 75% </template>
             <template v-slot:text>
-            -Snowmen Treasury is 75% full.<br />
-            -10 AVAX giveaway to 3 Snowmen holders.<br />
-            -$LODGE burns begin.. and MORE BUYBACKS!
+              -Snowmen Treasury is 75% full.<br />
+              -10 AVAX giveaway to 3 Snowmen holders.<br />
+              -$LODGE burns begin.. and MORE BUYBACKS!
             </template>
           </roadmap-box>
           <roadmap-box>
             <template v-slot:percent> 100% </template>
             <template v-slot:text>
-            -Snowmen Treasury is 100% full.<br />
-            -Giveaway of 10 Snowmen to Snowmen stakers.<br />
-            -Savage Snowmen launch party (holders free entry.)<br />
-            -Oh yeah.. and even more buybacks. 
+              -Snowmen Treasury is 100% full.<br />
+              -Giveaway of 10 Snowmen to Snowmen stakers.<br />
+              -Savage Snowmen launch party (holders free entry.)<br />
+              -Oh yeah.. and even more buybacks.
             </template>
           </roadmap-box>
         </div>
@@ -213,8 +172,9 @@
                 Phase 3
               </div>
               <p class="my-2 text-xl">
-              Recieve your Airdrop and get your team to The Lodge first by Collaborating 
-              with fellow giga-brain Snowmen to solve the mystery of the Savage Snowmen.
+                Recieve your Airdrop and get your team to The Lodge first by
+                Collaborating with fellow giga-brain Snowmen to solve the
+                mystery of the Savage Snowmen.
               </p>
             </div>
           </div>
@@ -224,7 +184,13 @@
     <!--snowman rarity -->
     <section class="bg-gray-100 py-8">
       <h2 class="text-center m-4 text-3xl md:text-5xl">Snowmen Rarity</h2>
-      <div class="flex flex-col md:flex-row">
+      <div class="flex flex-col md:flex-row md:flex-wrap items-center justify-center">
+
+        <div class="mx-4 mb-4 lg:w-2/5">
+          <img
+            src="~/assets/images/snowmen-carousel.gif"
+          />
+        </div>
         <div class="mx-4 mb-4 lg:w-2/5">
           <img src="~/assets/images/rarity-chart.png" />
         </div>
@@ -268,8 +234,8 @@
       <div class="text-center text-xl md:text-2xl lg:w-3/4 mx-auto">
         After experiencing the power of Avalanche first hand, our team of 5 came
         together to work on something that we would have fun building and
-        engaging in. We collided our mixed passions for Art, Socializing,
-        Gaming and Finance to create Savage Snowmen.
+        engaging in. We collided our mixed passions for Art, Socializing, Gaming
+        and Finance to create Savage Snowmen.
       </div>
       <div
         class="flex flex-row flex-wrap mx-8 mt-8 justify-center items-center"
@@ -320,21 +286,6 @@ export default {
     title: "Mint",
   },
   layout: "WithFooter",
-  name: "Mint",
-  data() {
-    return {
-      qty: 1,
-      minted: 0,
-      totalSupply: 10000,
-    };
-  },
-  methods: {
-    increment(amount = 1) {
-      this.qty = Math.max(1, this.qty + amount);
-    },
-    mint() {
-      console.log("call minting function");
-    },
-  },
+  name: "Mint"
 };
 </script>

@@ -20,6 +20,7 @@ module.exports = {
         '43vw': '43vw',
         '77%' : '77%',
         '13vw': '13vw',
+        '8vw': '8vw',
         '20vw': '20vw'
       },
       width: {
