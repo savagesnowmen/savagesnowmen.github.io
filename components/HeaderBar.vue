@@ -110,12 +110,6 @@ export default {
     if (ethereum) {
       try {
         const accounts = await ethereum.request({ method: "eth_accounts" });
-        const chainId = await ethereum.request({ method: "eth_chainId" });
-
-        if (chainId !== config.chainId) {
-          alert("Please switch the network over to Avalanche network!");
-          return;
-        }
 
         if (accounts.length > 0) {
           this.account = accounts[0] || null;

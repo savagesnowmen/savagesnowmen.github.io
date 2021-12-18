@@ -90,18 +90,13 @@ export default {
           CONTRACT_ABI,
           CONTRACT_ADDRESS
         );
-        const [nftPrice, gasInfo] = await Promise.all([
-          nftContract.methods.PRICE().call(),
-          getGasData(web3, account, nftContract.methods.mint(this.mintCount)),
-        ]);
+        const nftPrice = await nftContract.methods.PRICE().call();
         const value = toBN(nftPrice).mul(toBN(this.mintCount));
 
         await nftContract.methods
           .mint(this.mintCount)
           .send({
             from: account,
-            gasPrice: gasInfo.gasPrice,
-            gas: gasInfo.adjustedGas,
             value: value,
           })
           .then((res) => {
