@@ -10,6 +10,7 @@
       my-2
       p-1
     "
+    :href="to"
   >
     <span class="text-white">
       <slot/>
@@ -18,7 +19,7 @@
 </template>
 <script>
 export default {
-  name: "SButton",
+  name: "SLink",
   props: {
     to: [String, undefined],
     default: "",

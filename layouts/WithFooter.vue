@@ -11,7 +11,8 @@
       <div class="flex flex-row justify-between p-2">
         <social-icons/>
         <div class="flex flex-row">
-          <s-button class="bg-indigo-500" to="/mint">Mint</s-button>
+          <s-link class="bg-indigo-500" to="/mint">Mint</s-link>
+          <s-button class="bg-indigo-500" to="https://snowtrace.io/address/0x0814e598dE7318a5CE9Bc14DDB0F188cc469243e">Contract</s-button>
           <!-- <s-button class="bg-indigo-500">Farm</s-button>
         <s-button class="bg-indigo-500">Stake</s-button> -->
         </div>
