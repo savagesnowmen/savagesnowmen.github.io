@@ -1,7 +1,7 @@
 <template>
   <!-- the minting section -->
   <section class="w-full bg-gray-100 p-4 py-8">
-    <div class="container mx-auto">
+    <div class="container mx-auto flex flex-col items-center">
       <div class="flex md:flex-row justify-center mb-8">
         <div class="hidden md:block m-8 w-12rem">
           <img src="~/assets/images/snowman-head-red-hat.png" />
@@ -17,6 +17,9 @@
           <img src="~/assets/images/snowman-head-joint.png" />
         </div>
       </div>
+      <div class="mx-auto">
+        <span class="text-3xl">(1.5 AVAX)</span>
+      </div>
       <!-- the minting row -->
       <div class="flex flex-row flex-wrap items-center justify-center">
         <div class="text-4xl cursor-pointer" @click="increment(-1)">-</div>
@@ -28,7 +31,7 @@
         </div>
         <div>
           <s-button class="text-4xl bg-red-500" @click.native="mint()"
-            >Mint Snowmen</s-button
+            >Mint Snowmen </s-button
           >
         </div>
       </div>
