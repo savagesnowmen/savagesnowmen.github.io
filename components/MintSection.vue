@@ -49,6 +49,8 @@ import { getGasData } from "@/utils/web3";
 import { fromWei, toBN } from "@/utils/formatters";
 import detectEthereumProvider from "@metamask/detect-provider";
 
+const ethereum = window.ethereum;
+
 export default {
   name: "MintSection",
   data() {
@@ -66,8 +68,6 @@ export default {
       return await detectEthereumProvider();
     },
     async mint() {
-      const ethereum = window.ethereum;
-
       if (ethereum) {
         const chainId = await ethereum.request({ method: "eth_chainId" });
         const accounts = await ethereum.request({ method: "eth_accounts" });

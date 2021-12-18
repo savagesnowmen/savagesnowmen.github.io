@@ -68,6 +68,10 @@
 <script>
 import Web3 from "web3";
 import Web3Modal from "web3modal";
+import config from "../app.config";
+import { connect } from "@/utils/web3";
+
+const ethereum = window.ethereum;
 
 const providerOptions = {
   /* See Provider Options Section */
@@ -93,34 +97,34 @@ export default {
   },
   methods: {
     async connect() {
-      let ethereum = window.ethereum;
-      let web3 = window.web3;
+      await connect();
 
-      await ethereum.enable();
-
-      if (typeof ethereum !== "undefined") {
-        await ethereum.enable();
-        web3 = new Web3(ethereum);
-      } else if (typeof web3 !== "undefined") {
-        web3 = new Web3(web3.currentProvider);
-      } else {
-        web3 = new Web3(
-          new Web3.providers.HttpProvider(process.env.WEB3_PROVIDER)
-        );
-      }
-
-      const networkId = await web3.eth.getChainId();
-
-      if (networkId !== 43113) {
-        alert("Wrong Network");
-        return;
-      }
-
-      const accounts = await web3.eth.getAccounts();
+      const accounts = await ethereum.request({ method: "eth_accounts" });
 
       this.account = accounts[0];
       this.accountMsg = this.account.substr(this.account.length - 4);
     },
+  },
+
+  async mounted() {
+    if (ethereum) {
+      try {
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+        const chainId = await ethereum.request({ method: "eth_chainId" });
+
+        if (chainId !== config.chainId) {
+          alert("Please switch the network over to Avalanche network!");
+          return;
+        }
+
+        if (accounts.length > 0) {
+          this.account = accounts[0] || null;
+          this.accountMsg = this.account.substr(this.account.length - 4);
+        }
+      } catch (err) {
+        console.error(err);
+      }
+    }
   },
 };
 </script>
