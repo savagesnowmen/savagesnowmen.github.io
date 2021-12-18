@@ -84,24 +84,24 @@ export default {
         const account = accounts[0];
         const CONTRACT_ABI = require("../abi/SavageSnowmen.json");
         const CONTRACT_ADDRESS = config.NFT_CONTRACT_ADDRESS;
-        const web3 = new Web3(await this.provider());
+        const web3 = new Web3(Web3.givenProvider);
 
         const nftContract = new web3.eth.Contract(
           CONTRACT_ABI,
           CONTRACT_ADDRESS
         );
+        console.log("assdf");
         const [nftPrice, gasInfo] = await Promise.all([
           nftContract.methods.PRICE().call(),
           getGasData(web3, account, nftContract.methods.mint(this.mintCount)),
         ]);
+        console.log(nftPrice, gasInfo);
         const value = toBN(nftPrice).mul(toBN(this.mintCount));
 
         await nftContract.methods
           .mint(this.mintCount)
           .send({
             from: account,
-            gasPrice: gasInfo.gasPrice,
-            gas: gasInfo.adjustedGas,
             value: value,
           })
           .then((res) => {
