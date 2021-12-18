@@ -1,80 +1,116 @@
 <template>
-    <!-- the minting section -->
-    <section class="w-full bg-gray-100 p-4 py-8">
-      <div class="container mx-auto">
-        <div class="flex md:flex-row justify-center mb-8">
-          <div class="hidden md:block m-8 w-12rem">
-            <img src="~/assets/images/snowman-head-red-hat.png" />
-          </div>
-          <div class="text-center text-xl lg:text-2xl md:w-2/3">
-            Welcome to The Lodge. If you want to be a member you’ll need a
-            snowman first. Nothing personal, just want to make sure you aren’t
-            just anybody. The Lodge consists of only the most savage, laid back
-            avax chads in all the snow caps. Fresh pow on deck, heaters inside,
-            beer on tap, nothing beats The Lodge. You understand now, right?
-          </div>
-          <div class="hidden md:block m-8 w-12rem">
-            <img src="~/assets/images/snowman-head-joint.png" />
-          </div>
+  <!-- the minting section -->
+  <section class="w-full bg-gray-100 p-4 py-8">
+    <div class="container mx-auto">
+      <div class="flex md:flex-row justify-center mb-8">
+        <div class="hidden md:block m-8 w-12rem">
+          <img src="~/assets/images/snowman-head-red-hat.png" />
         </div>
-        <!-- the minting row -->
-        <div class="flex flex-row flex-wrap items-center justify-center">
-          <div class="text-4xl cursor-pointer" @click="increment(-1)">-</div>
-          <div class="p-4 text-4xl">
-            {{ qty }}
-          </div>
-          <div class="text-4xl md:mr-8 cursor-pointer" @click="increment()">
-            +
-          </div>
-          <div>
-            <s-button class="text-4xl bg-red-500" @click.native="mint()"
-              >Mint Snowmen</s-button
-            >
-          </div>
+        <div class="text-center text-xl lg:text-2xl md:w-2/3">
+          Welcome to The Lodge. If you want to be a member you’ll need a snowman
+          first. Nothing personal, just want to make sure you aren’t just
+          anybody. The Lodge consists of only the most savage, laid back avax
+          chads in all the snow caps. Fresh pow on deck, heaters inside, beer on
+          tap, nothing beats The Lodge. You understand now, right?
         </div>
-        <div class="flex flex-row flex-wrap justify-center items-center">
-          <div class="mx-4 text-2xl md:text-5xl">
-            {{ minted }} / {{ totalSupply }}
-          </div>
-          <div class="mx-4 text-2xl md:text-5xl">Have Joined The Lodge</div>
+        <div class="hidden md:block m-8 w-12rem">
+          <img src="~/assets/images/snowman-head-joint.png" />
         </div>
       </div>
-    </section>
+      <!-- the minting row -->
+      <div class="flex flex-row flex-wrap items-center justify-center">
+        <div class="text-4xl cursor-pointer" @click="increment(-1)">-</div>
+        <div class="p-4 text-4xl">
+          {{ mintCount }}
+        </div>
+        <div class="text-4xl md:mr-8 cursor-pointer" @click="increment()">
+          +
+        </div>
+        <div>
+          <s-button class="text-4xl bg-red-500" @click.native="mint()"
+            >Mint Snowmen</s-button
+          >
+        </div>
+      </div>
+      <div class="flex flex-row flex-wrap justify-center items-center">
+        <div class="mx-4 text-2xl md:text-5xl">
+          {{ minted }} / {{ totalSupply }}
+        </div>
+        <div class="mx-4 text-2xl md:text-5xl">Have Joined The Lodge</div>
+      </div>
+    </div>
+  </section>
 </template>
 
 <script>
 import Web3 from "web3";
+import config from "../app.config.js";
+import { getGasData } from "@/utils/web3";
+import { fromWei, toBN } from "@/utils/formatters";
+import detectEthereumProvider from "@metamask/detect-provider";
+
 export default {
   name: "MintSection",
   data() {
     return {
-      qty: 1,
+      mintCount: 1,
       minted: 0,
       totalSupply: 10000,
     };
   },
   methods: {
     increment(amount = 1) {
-      this.qty = Math.max(1, this.qty + amount);
+      this.mintCount = Math.min(Math.max(1, this.mintCount + amount), 20);
+    },
+    async provider() {
+      return await detectEthereumProvider();
     },
     async mint() {
-      const contract_abi = require("../abi/SavageSnowmen.json");
-      const web3 = new Web3(window.ethereum);
-      console.log(contract_abi.abi);
-      await window.ethereum.enable();
-      const NameContract = new web3.eth.Contract(
-        contract_abi.abi,
-        "0xd53D29ACDF1B25c46B47312a1C8c241a719AadB3"
-      );
-      const accounts = await web3.eth.getAccounts();
-      await NameContract.methods
-        .mint(this.qty)
-        .send({ from: accounts[0] })
-        .then(console.log("Started mint function"))
-        .catch((err) => {
-          console.log(err);
-          alert(err.message);
-        });
+      const ethereum = window.ethereum;
+
+      if (ethereum) {
+        const chainId = await ethereum.request({ method: "eth_chainId" });
+        const accounts = await ethereum.request({ method: "eth_accounts" });
+
+        if (chainId !== config.chainId) {
+          alert("Please switch the network over to Avalanche network!");
+          return;
+        }
+        if (accounts.length === 0) {
+          alert("Please connect to the wallet address!");
+          return;
+        }
+
+        const account = accounts[0];
+        const CONTRACT_ABI = require("../abi/SavageSnowmen.json");
+        const CONTRACT_ADDRESS = config.NFT_CONTRACT_ADDRESS;
+        const web3 = new Web3(await this.provider());
+
+        const nftContract = new web3.eth.Contract(
+          CONTRACT_ABI,
+          CONTRACT_ADDRESS
+        );
+        const [nftPrice, gasInfo] = await Promise.all([
+          nftContract.methods.PRICE().call(),
+          getGasData(web3, account, nftContract.methods.mint(this.mintCount)),
+        ]);
+        const value = toBN(nftPrice).mul(toBN(this.mintCount));
+
+        await nftContract.methods
+          .mint(this.mintCount)
+          .send({
+            from: account,
+            gasPrice: gasInfo.gasPrice,
+            gas: gasInfo.adjustedGas,
+            value: value,
+          })
+          .then((res) => {
+            alert("Successfully minted");
+          })
+          .catch((err) => {
+            alert("Minting transaction is terminated");
+          });
+      }
     },
   },
 };

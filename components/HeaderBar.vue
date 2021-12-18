@@ -95,7 +95,9 @@ export default {
     async connect() {
       let ethereum = window.ethereum;
       let web3 = window.web3;
+
       await ethereum.enable();
+
       if (typeof ethereum !== "undefined") {
         await ethereum.enable();
         web3 = new Web3(ethereum);
@@ -106,22 +108,18 @@ export default {
           new Web3.providers.HttpProvider(process.env.WEB3_PROVIDER)
         );
       }
-      /* const web3 = new Web3(Web3.givenProvider || "http://localhost:8545"); */
-      // Load account
+
+      const networkId = await web3.eth.getChainId();
+
+      if (networkId !== 43113) {
+        alert("Wrong Network");
+        return;
+      }
+
       const accounts = await web3.eth.getAccounts();
-      console.log(accounts);
+
       this.account = accounts[0];
       this.accountMsg = this.account.substr(this.account.length - 4);
-      const networkId = await web3.eth.net.getId();
-      console.log(networkId);
-      if (networkId !== 43113) alert("Wrong Network");
-      /* const provider = await web3Modal.connect();
-      const web3 = new Web3(provider);
-      let accounts;
-      let getAccounts = await web3.eth
-        .getAccounts()
-        .then((acc) => (accounts = acc));
-      console.log(getAccounts, accounts); */
     },
   },
 };
