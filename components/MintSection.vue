@@ -35,12 +35,12 @@
           >
         </div>
       </div>
-      <div class="flex flex-row flex-wrap justify-center items-center">
+      <!-- <div class="flex flex-row flex-wrap justify-center items-center">
         <div class="mx-4 text-2xl md:text-5xl">
           {{ minted }} / {{ totalSupply }}
         </div>
         <div class="mx-4 text-2xl md:text-5xl">Have Joined The Lodge</div>
-      </div>
+      </div> -->
     </div>
   </section>
 </template>
