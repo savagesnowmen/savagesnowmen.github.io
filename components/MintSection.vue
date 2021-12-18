@@ -35,12 +35,12 @@
           >
         </div>
       </div>
-      <!-- <div class="flex flex-row flex-wrap justify-center items-center">
+      <div class="flex flex-row flex-wrap justify-center items-center">
         <div class="mx-4 text-2xl md:text-5xl">
           {{ minted }} / {{ totalSupply }}
         </div>
         <div class="mx-4 text-2xl md:text-5xl">Have Joined The Lodge</div>
-      </div> -->
+      </div>
     </div>
   </section>
 </template>
@@ -62,6 +62,13 @@ export default {
       minted: 0,
       totalSupply: 10000,
     };
+  },
+  async created(){
+    if(ethereum){
+      const web3 = new Web3(await this.provider());
+      const minted = await web3.eth.getBalance(config.NFT_CONTRACT_ADDRESS)
+      this.minted = minted / 1.5 / 1000000000000000000
+    }
   },
   methods: {
     increment(amount = 1) {
