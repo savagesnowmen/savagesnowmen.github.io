@@ -61,6 +61,7 @@ module.exports = {
         '-3rem': '-3rem'
       },
       margin: {
+        '48': '12rem',
         '6rem': '6rem',
         'auto': 'auto'
       }
