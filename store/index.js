@@ -1,6 +1,8 @@
 import Web3 from "web3";
 import axios from "axios"
 import config from "../app.config.js"
+import detectEthereumProvider from "@metamask/detect-provider";
+
 export const state = () => ({
   account: '',
   snowmen: [],
@@ -21,7 +23,14 @@ export const mutations = {
   },
   async getSnowmenData(snowmanId) {
     let snowmanData = await axios.get(`https://ipfs.io/ipfs/QmRoQn3G24Y39u74TmB7axkwXkxyvWr7nFUjyx8QYjT98d/${snowmanId}.json`)
-
+  },
+  async getSnowmen() {
+    const snowman = await axios.get(
+      "https://ipfs.io/ipfs/QmRoQn3G24Y39u74TmB7axkwXkxyvWr7nFUjyx8QYjT98d/1.json"
+    );
+    this.heading = snowman.data.name;
+    this.imageUrl = snowman.data.image.slice(7);
+    this.attributes = snowman.data.attributes;
   },
   async addTokensToWallet() {
     const tokenAddress = config.tokenAddress;
@@ -51,6 +60,49 @@ export const mutations = {
     } catch (error) {
       console.log(error);
     }
+  },
+  async mint() {
+    if (ethereum) {
+      const chainId = await ethereum.request({ method: "eth_chainId" });
+      const accounts = await ethereum.request({ method: "eth_accounts" });
+
+      if (chainId !== config.chainId) {
+        alert("Please switch the network over to Avalanche network!");
+        return;
+      }
+      if (accounts.length === 0) {
+        alert("Please connect to the wallet address!");
+        return;
+      }
+
+      const account = accounts[0];
+      const CONTRACT_ABI = require("../abi/SavageSnowmen.json");
+      const CONTRACT_ADDRESS = config.NFT_CONTRACT_ADDRESS;
+      const web3 = new Web3(await this.provider());
+
+      const nftContract = new web3.eth.Contract(
+        CONTRACT_ABI,
+        CONTRACT_ADDRESS
+      );
+      const nftPrice = await nftContract.methods.PRICE().call();
+      const value = toBN(nftPrice).mul(toBN(this.mintCount));
+
+      await nftContract.methods
+        .mint(this.mintCount)
+        .send({
+          from: account,
+          value: value,
+        })
+        .then((res) => {
+          alert("Successfully minted");
+        })
+        .catch((err) => {
+          alert("Minting transaction is terminated");
+        });
+    }
+  },
+  async provider() {
+    return await detectEthereumProvider();
   },
   async web3functionality(state) {
     window.addEventListener("load", function () {

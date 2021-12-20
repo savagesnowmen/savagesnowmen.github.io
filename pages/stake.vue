@@ -3,7 +3,7 @@
     <section class="relative md:h-56vw">
       <div class="container mx-auto relative md:pt-32">
         <!-- alert -->
-        <div class="p-2 bg-red-500 text-white text-xl rounded-lg">
+        <div class="p-2 bg-red-500 text-white text-3xl rounded-lg text-center">
           Add liquidty to LODGE/AVAX on TraderJoeXYZ.com then stake your LP
           tokens below to earn $LODGE
         </div>
@@ -22,7 +22,8 @@
                 border-2 border-black
                 mx-2
               "
-              ><span class="text-white">Buy $LODGE</span></a>
+              ><span class="text-white">Buy $LODGE</span></a
+            >
             <a
               class="
                 text-2xl
@@ -34,7 +35,8 @@
                 border-2 border-black
                 mx-2
               "
-              ><span class="text-white">Add Liquidity</span></a>
+              ><span class="text-white">Add Liquidity</span></a
+            >
           </div>
           <div
             class="
@@ -66,14 +68,10 @@
             <div class="flex flew-row mt-4">
               <t-stake-input class="w-36" />
               <t-max-button>MAX</t-max-button>
-              <a
-                class="bg-indigo-300 rounded-full text-2xl p-1 px-8 mx-2"
-              >
+              <a class="bg-indigo-300 rounded-full text-2xl p-1 px-8 mx-2">
                 <span class="text-white align-middle">Stake</span>
               </a>
-              <a
-                class="bg-indigo-300 rounded-full text-2xl p-1 px-8"
-              >
+              <a class="bg-indigo-300 rounded-full text-2xl p-1 px-8">
                 <span class="text-white align-middle">Claim</span>
               </a>
             </div>

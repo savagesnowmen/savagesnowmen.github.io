@@ -31,6 +31,11 @@
     >
       <s-link
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
+        to="/mint"
+        >Mint</s-link
+      >
+      <s-link
+        class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         to="/"
         >Farm</s-link
       >
@@ -39,7 +44,7 @@
         to="/"
         >Stake</s-link
       >
-      <s-link to="/snowmen" class="bg-indigo-500 text-2xl border-4 mx-2 px-2"
+      <s-link to="/" class="bg-indigo-500 text-2xl border-4 mx-2 px-2"
         >My Snowmen</s-link
       >
       <!--<s-button class="bg-indigo-500 text-2xl border-4 px-2">Stake</s-button> -->
@@ -67,21 +72,10 @@
 </template>
 <script>
 import Web3 from "web3";
-import Web3Modal from "web3modal";
 import config from "../app.config";
 import { connect } from "@/utils/web3";
 
 const ethereum = window.ethereum;
-
-const providerOptions = {
-  /* See Provider Options Section */
-};
-
-const web3Modal = new Web3Modal({
-  network: "mainnet", // optional
-  cacheProvider: true, // optional
-  providerOptions, // required
-});
 
 export default {
   name: "HeaderBar",
