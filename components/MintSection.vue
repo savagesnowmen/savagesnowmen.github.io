@@ -48,11 +48,12 @@
 <script>
 import Web3 from "web3";
 import config from "../app.config.js";
-import { getGasData } from "@/utils/web3";
-import { fromWei, toBN } from "@/utils/formatters";
+import { toBN } from "@/utils/formatters";
 import detectEthereumProvider from "@metamask/detect-provider";
 
 const ethereum = window.ethereum;
+const CONTRACT_ABI = require("../abi/SavageSnowmen.json");
+const CONTRACT_ADDRESS = config.NFT_CONTRACT_ADDRESS;
 
 export default {
   name: "MintSection",
@@ -66,16 +67,21 @@ export default {
   async created(){
     if(ethereum){
       const web3 = new Web3(await this.provider());
-      const minted = await web3.eth.getBalance(config.NFT_CONTRACT_ADDRESS)
-      this.minted = minted / 1.5 / 1000000000000000000
+
+      const nftContract = new web3.eth.Contract(
+          CONTRACT_ABI,
+          CONTRACT_ADDRESS
+      );
+
+      this.minted = await nftContract.methods.totalSupply().call()
     }
   },
   methods: {
     increment(amount = 1) {
       this.mintCount = Math.min(Math.max(1, this.mintCount + amount), 20);
     },
-    async provider() {
-      return await detectEthereumProvider();
+    provider() {
+      return detectEthereumProvider();
     },
     async mint() {
       if (ethereum) {
@@ -92,14 +98,13 @@ export default {
         }
 
         const account = accounts[0];
-        const CONTRACT_ABI = require("../abi/SavageSnowmen.json");
-        const CONTRACT_ADDRESS = config.NFT_CONTRACT_ADDRESS;
         const web3 = new Web3(await this.provider());
 
         const nftContract = new web3.eth.Contract(
           CONTRACT_ABI,
           CONTRACT_ADDRESS
         );
+
         const nftPrice = await nftContract.methods.PRICE().call();
         const value = toBN(nftPrice).mul(toBN(this.mintCount));
 
