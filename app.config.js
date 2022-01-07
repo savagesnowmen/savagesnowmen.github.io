@@ -8,5 +8,16 @@ const config = {
   snoTokenImage: "http://placekitten.com/200/300",
   NFT_CONTRACT_ADDRESS: "0x0814e598dE7318a5CE9Bc14DDB0F188cc469243e", // "0x0814e598dE7318a5CE9Bc14DDB0F188cc469243e#writeContract" <- Testnet
   GAS_MULTIPLIER: 2,
+  avalancheMainnetMetamaskConfig: {
+    chainId: '0xA86A',
+    chainName: 'Avalanche Mainnet C-Chain',
+    nativeCurrency: {
+      name: 'Avalanche',
+      symbol: 'AVAX',
+      decimals: 18,
+    },
+    rpcUrls: ['https://api.avax.network/ext/bc/C/rpc'],
+    blockExplorerUrls: ['https://snowtrace.io'],
+  }
 };
 export default config;

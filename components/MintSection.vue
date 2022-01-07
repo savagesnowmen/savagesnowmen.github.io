@@ -46,12 +46,9 @@
 </template>
 
 <script>
-import Web3 from "web3";
 import config from "../app.config.js";
-import { toBN } from "@/utils/formatters";
-import detectEthereumProvider from "@metamask/detect-provider";
+import { ethers } from 'ethers'
 
-const ethereum = window.ethereum;
 const CONTRACT_ABI = require("../abi/SavageSnowmen.json");
 const CONTRACT_ADDRESS = config.NFT_CONTRACT_ADDRESS;
 
@@ -62,64 +59,68 @@ export default {
       mintCount: 1,
       minted: 0,
       totalSupply: 10000,
+      nftPrice: 1.5
     };
   },
-  async created(){
-    if(ethereum){
-      const web3 = new Web3(await this.provider());
+  async mounted() {
+    try {
+      if(!this.$wallet.provider) return 
 
-      const nftContract = new web3.eth.Contract(
-          CONTRACT_ABI,
-          CONTRACT_ADDRESS
-      );
+      const network = await this.$wallet.provider.getNetwork()
+      const isWrongNetwork = `0x${network.chainId.toString(16)}` !== config.chainId
 
-      this.minted = await nftContract.methods.totalSupply().call()
+      if (isWrongNetwork) {        
+        await this.$wallet.switchNetwork(config.avalancheMainnetMetamaskConfig)
+        return // return early since switching network will trigger page reload anyway
+      }
+
+      const nftContract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, this.$wallet.provider)
+      this.minted = await nftContract.totalSupply()
+      const price = await nftContract.PRICE()
+      this.nftPrice = +ethers.utils.formatEther(price.toString())
+      
+    } catch (err) {
+      console.error({err})
     }
   },
   methods: {
     increment(amount = 1) {
       this.mintCount = Math.min(Math.max(1, this.mintCount + amount), 20);
     },
-    provider() {
-      return detectEthereumProvider();
-    },
     async mint() {
-      if (ethereum) {
-        const chainId = await ethereum.request({ method: "eth_chainId" });
-        const accounts = await ethereum.request({ method: "eth_accounts" });
+      try {
 
-        if (chainId !== config.chainId) {
-          alert("Please switch the network over to Avalanche network!");
-          return;
-        }
-        if (accounts.length === 0) {
-          alert("Please connect to the wallet address!");
-          return;
+        const isWrongNetwork = this.$wallet.hexChainId !== config.chainId
+        if (isWrongNetwork) {
+          await this.$wallet.switchNetwork(config.avalancheMainnetMetamaskConfig)
+          return // return early since switching network will trigge page reload anyway
         }
 
-        const account = accounts[0];
-        const web3 = new Web3(await this.provider());
+        if (!this.$wallet.account) {
+          await this.$wallet.connect()
+        }
 
-        const nftContract = new web3.eth.Contract(
-          CONTRACT_ABI,
-          CONTRACT_ADDRESS
-        );
+        const signer = this.$wallet.provider.getSigner()
+        const signedContract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer)
 
-        const nftPrice = await nftContract.methods.PRICE().call();
-        const value = toBN(nftPrice).mul(toBN(this.mintCount));
+        const totalPrice = this.nftPrice * this.mintCount
+        const value = ethers.utils.parseEther(totalPrice.toString())
 
-        await nftContract.methods
-          .mint(this.mintCount)
-          .send({
-            from: account,
-            value: value,
-          })
-          .then((res) => {
-            alert("Successfully minted");
-          })
-          .catch((err) => {
-            alert("Minting transaction is terminated");
-          });
+        await signedContract.mint(this.mintCount, {
+          value
+        })
+
+        alert("Successfully minted");
+        this.mintCount = 1
+
+      } catch (err) {
+        console.error({err})
+        if(err.code === -32603) {
+          alert("Insufficent funds!")
+        }
+        else {
+          alert("Minting transaction is terminated");
+        }
       }
     },
   },
