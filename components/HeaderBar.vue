@@ -44,8 +44,8 @@
       >
       <!--<s-button class="bg-indigo-500 text-2xl border-4 px-2">Stake</s-button> -->
       <s-button
-        v-if="account == ''"
-        @click.native="connect()"
+        v-if="!$wallet.account"
+        @click.native="onWalletConnect"
         class="w-full md:w-auto bg-indigo-500 text-2xl border-4 mx-2 px-2"
         >Connect Wallet</s-button
       >
@@ -60,18 +60,13 @@
           mx-2
           px-2
         "
-        >Connected (0x...{{ accountMsg }})</s-button
+        >Connected {{ $wallet.accountCompact }}</s-button
       >
     </nav>
   </header>
 </template>
 <script>
-import Web3 from "web3";
 import Web3Modal from "web3modal";
-import config from "../app.config";
-import { connect } from "@/utils/web3";
-
-const ethereum = window.ethereum;
 
 const providerOptions = {
   /* See Provider Options Section */
@@ -90,35 +85,18 @@ export default {
   },
   data() {
     return {
-      account: "",
-      accountMsg: "",
       showMenu: false,
     };
   },
-  methods: {
-    async connect() {
-      await connect();
-
-      const accounts = await ethereum.request({ method: "eth_accounts" });
-
-      this.account = accounts[0];
-      this.accountMsg = this.account.substr(this.account.length - 4);
-    },
-  },
-
-  async mounted() {
-    if (ethereum) {
+  methods:{
+    async onWalletConnect() {
       try {
-        const accounts = await ethereum.request({ method: "eth_accounts" });
-
-        if (accounts.length > 0) {
-          this.account = accounts[0] || null;
-          this.accountMsg = this.account.substr(this.account.length - 4);
-        }
-      } catch (err) {
-        console.error(err);
+        await this.$wallet.connect()
+      } catch (e) {
+        console.error({e})
+        alert("Wallet connection failed")
       }
     }
-  },
+  }
 };
 </script>
