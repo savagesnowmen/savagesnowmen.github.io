@@ -20,11 +20,13 @@ module.exports = {
         '43vw': '43vw',
         '77%': '77%',
         '13vw': '13vw',
+        '11vw': '11vw',
         '8vw': '8vw',
         '20vw': '20vw'
       },
       width: {
         '8rem': '8rem',
+        '10rem': '10rem',
         '12rem': '12rem',
         '14rem': '14rem',
         '16rem': '16rem',
@@ -63,6 +65,9 @@ module.exports = {
       margin: {
         '6rem': '6rem',
         'auto': 'auto'
+      },
+      colors: {
+        'rarity': '#2e3092',
       }
     },
   },
