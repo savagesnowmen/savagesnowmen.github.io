@@ -6,7 +6,104 @@
 
 @tailwind utilities;
 
-
+@layer components {
+  .arrow-bottom::before{
+    content:'';
+    width: 1px;
+    height: 2.5rem;
+    background-color: rgb(239, 68, 68);
+    position: absolute;
+    bottom: -2.5rem;
+    left: 50%;
+  }
+  .arrow-bottom::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: solid rgb(239, 68, 68);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    position: absolute;
+    bottom: calc(-2.5rem + 1px);
+    left: calc(50% - 3px);
+  }
+  .arrow-right::before{
+    content:'';
+    width: 4rem;
+    height: 1px;
+    background-color: rgb(239, 68, 68);
+    position: absolute;
+    left: 10rem;
+    top: 50%;
+  }
+  .arrow-right::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: solid rgb(239, 68, 68);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: calc(50% - 3px);
+    left: calc(10rem + 4rem - 7px);
+  }
+  .arrow-left::before{
+    content: "";
+    height: 7.5rem;
+    width: 3rem;
+    position: absolute;
+    border-radius: 8px 0 0 8px;
+    border:solid rgb(239, 68, 68);
+    border-width: 1px 0 1px 1px;
+    top: calc(50% - 7.5rem);
+    left: -3rem;
+  }
+  .arrow-left::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: solid rgb(239, 68, 68);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-45deg);
+    position: absolute;
+    top: calc(50% - 7.5rem - 3px);
+    left: -.5rem;
+  }
+  .arrow-top::before{
+    content: "";
+    height: 5rem;
+    width: 14rem;
+    position: absolute;
+    border-radius: 8px;
+    border: solid rgb(239, 68, 68);
+    border-width: 0 1px 1px 1px;
+    bottom: calc(-5rem + 24px);
+    right: 50%;
+    z-index: -1;
+    top: unset;
+    left: unset;
+  }
+  .arrow-top::after{
+    content: "";
+    width: 0;
+    height: 0;
+    border: solid rgb(239, 68, 68);
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    position: absolute;
+    bottom: -2.25rem;
+    left: calc(50% - 3px - 14rem);
+    top: unset;
+  }
+}
 body{
     font-family: 'Iceland';
 }

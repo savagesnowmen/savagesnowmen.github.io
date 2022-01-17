@@ -196,35 +196,35 @@
       <div class="flex flex-col md:flex-row md:flex-wrap items-center justify-center gap-10 my-8">
         <div class="flex flex-col text-center text-4xl md:text-5xl">
           <div class="underline mb-8">Common</div>
-          <div class="w-14rem mb-4">
+          <div class="w-16rem md:w-14rem mb-4">
             <img src="~/assets/images/common-rarity.png" />
           </div>
           <div>50%</div>
         </div>
         <div class="flex flex-col text-center text-4xl md:text-5xl">
           <div class="underline mb-8">Rare</div>
-          <div class="w-14rem mb-4">
+          <div class="w-16rem md:w-14rem mb-4">
             <img src="~/assets/images/rare-rarity.png" />
           </div>
           <div>33%</div>
         </div>
         <div class="flex flex-col text-center text-4xl md:text-5xl">
           <div class="underline mb-8">Ultimate</div>
-          <div class="w-14rem mb-4">
+          <div class="w-16rem md:w-14rem mb-4">
             <img src="~/assets/images/ultimate-rarity.png" />
           </div>
           <div>10%</div>
         </div>
         <div class="flex flex-col text-center text-4xl md:text-5xl">
           <div class="underline mb-8">Alpha</div>
-          <div class="w-14rem mb-4">
+          <div class="w-16rem md:w-14rem mb-4">
             <img src="~/assets/images/alpha-rarity.png" />
           </div>
           <div>6.9%</div>
         </div>
         <div class="flex flex-col text-center text-4xl md:text-5xl">
           <div class="underline mb-8">Legendary</div>
-          <div class="w-14rem mb-4">
+          <div class="w-16rem md:w-14rem mb-4">
             1 of 1
           </div>
           <div>0.1%</div>
