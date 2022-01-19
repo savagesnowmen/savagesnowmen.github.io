@@ -12,10 +12,10 @@
       <s-button class="bg-indigo-500 mb-10 md:text-2xl lg:text-3xl min-w-7em"
         >Connect Wallet</s-button
       >
-      <s-link
-        to="/snowmen"
+      <s-button
+        to="https://marketplace.kalao.io/my-account/collectibles"
         class="bg-indigo-500 md:text-2xl lg:text-3xl min-w-7em"
-        >My Snowmen</s-link
+        >My Snowmen</s-button
       >
       <s-link to="/" class="bg-indigo-500 md:text-2xl lg:text-3xl min-w-7em"
         >Stake Snowmen</s-link

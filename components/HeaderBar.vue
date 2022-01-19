@@ -39,8 +39,8 @@
         to="/"
         >Stake</s-link
       >
-      <s-link to="/snowmen" class="bg-indigo-500 text-2xl border-4 mx-2 px-2"
-        >My Snowmen</s-link
+      <s-button to="https://marketplace.kalao.io/my-account/collectibles" class="bg-indigo-500 text-2xl border-4 mx-2 px-2"
+        >My Snowmen</s-button
       >
       <!--<s-button class="bg-indigo-500 text-2xl border-4 px-2">Stake</s-button> -->
       <s-button
