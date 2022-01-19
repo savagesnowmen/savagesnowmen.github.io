@@ -13,7 +13,7 @@
         >Connect Wallet</s-button
       >
       <s-link
-        to="/snowmen"
+        to="https://marketplace.kalao.io/my-account/collectibles"
         class="bg-indigo-500 md:text-2xl lg:text-3xl min-w-7em"
         >My Snowmen</s-link
       >
