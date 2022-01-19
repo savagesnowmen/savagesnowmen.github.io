@@ -1,5 +1,5 @@
 <template>
-  <section class="py-8 relative text-white bg-rarity md:bg-transparent">
+  <section class="py-8 relative text-white bg-rarity md:bg-transparent overflow-hidden">
     <img
       class="w-full absolute top-0 -z-1 hidden md:block"
       src="~/assets/images/roadmap-background.jpg"
